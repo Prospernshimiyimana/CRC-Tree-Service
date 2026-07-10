@@ -1,0 +1,331 @@
+"use client";
+
+import { AnimatePresence, motion } from "framer-motion";
+import Image from "next/image";
+import Link from "next/link";
+import { ArrowRight, ChevronLeft, ChevronRight, Leaf, X } from "lucide-react";
+import { useEffect, useMemo, useState } from "react";
+
+type Category = "All" | "Tree Removal" | "Tree Trimming" | "Stump Grinding" | "Emergency";
+
+type Project = {
+  title: string;
+  category: Exclude<Category, "All">;
+  image: string;
+  description: string;
+};
+
+const categories: Category[] = [
+  "All",
+  "Tree Removal",
+  "Tree Trimming",
+  "Stump Grinding",
+  "Emergency",
+];
+
+const projects: Project[] = [
+  {
+    title: "Large Oak Removal",
+    category: "Tree Removal",
+    image: "/images/tree%202%20copy.jpg",
+    description: "Safe and efficient removal of a hazardous oak near the driveway and roofline.",
+  },
+  {
+    title: "Canopy Sculpting",
+    category: "Tree Trimming",
+    image: "/images/tree 14 copy.jpg",
+    description: "Precision pruning to improve structure, airflow, and curb appeal.",
+  },
+  {
+    title: "Stump Reclamation",
+    category: "Stump Grinding",
+    image: "/images/tree 12 copy.jpg",
+    description: "Complete stump removal for a clean, usable backyard space.",
+  },
+  {
+    title: "Storm Response Cleanup",
+    category: "Emergency",
+    image: "/images/emergency tree 3 copy.jpg",
+    description: "Rapid removal and debris clearing after a severe wind event.",
+  },
+  {
+    title: "Front Yard Hazard Tree",
+    category: "Tree Removal",
+    image: "/images/tree 8 copy.jpg",
+    description: "Careful removal of a leaning tree protecting the home and street view.",
+  },
+  {
+    title: "Crown Reduction",
+    category: "Tree Trimming",
+    image: "/images/trim tree 5 copy.jpg",
+    description: "Selective crown reduction for balanced growth and improved light access.",
+  },
+  {
+    title: "Root-Level Stump Removal",
+    category: "Stump Grinding",
+    image: "/images/tree%206.jpg",
+    description: "Deep grinding that leaves the space ready for landscaping or lawn.",
+  },
+  {
+    title: "Emergency Limb Removal",
+    category: "Emergency",
+    image: "/images/tree 5 copy.jpg",
+    description: "Immediate support for dangerous hanging limbs and storm damage.",
+  },
+];
+
+export default function About() {
+  const [activeCategory, setActiveCategory] = useState<Category>("All");
+  const [selectedIndex, setSelectedIndex] = useState<number | null>(null);
+
+  const visibleProjects = useMemo(() => {
+    if (activeCategory === "All") return projects;
+    return projects.filter((project) => project.category === activeCategory);
+  }, [activeCategory]);
+
+  const selectedProject =
+    selectedIndex !== null ? visibleProjects[selectedIndex] ?? null : null;
+
+  useEffect(() => {
+    if (selectedIndex === null || selectedIndex >= visibleProjects.length) {
+      setSelectedIndex(null);
+      return;
+    }
+
+    const onKeyDown = (event: KeyboardEvent) => {
+      if (event.key === "Escape") {
+        setSelectedIndex(null);
+      }
+      if (event.key === "ArrowRight") {
+        setSelectedIndex((current) =>
+          current === null
+            ? 0
+            : (current + 1) % visibleProjects.length
+        );
+      }
+      if (event.key === "ArrowLeft") {
+        setSelectedIndex((current) =>
+          current === null
+            ? visibleProjects.length - 1
+            : (current - 1 + visibleProjects.length) % visibleProjects.length
+        );
+      }
+    };
+
+    window.addEventListener("keydown", onKeyDown);
+    return () => window.removeEventListener("keydown", onKeyDown);
+  }, [selectedIndex, visibleProjects.length]);
+
+  return (
+    <section className="bg-[radial-gradient(circle_at_top_left,_rgba(16,185,129,0.08),_transparent_45%),linear-gradient(135deg,_#f8fcf8_0%,_#f3f7f2_100%)] py-20 sm:py-24 lg:py-28">
+      <div className="mx-auto max-w-7xl px-6 sm:px-8 lg:px-10">
+        <motion.div
+          initial={{ opacity: 0, y: 24 }}
+          whileInView={{ opacity: 1, y: 0 }}
+          transition={{ duration: 0.6 }}
+          viewport={{ once: true, amount: 0.2 }}
+          className="mx-auto max-w-3xl text-center"
+        >
+          <div className="inline-flex items-center gap-2 rounded-full border border-emerald-200 bg-white/80 px-4 py-2 text-sm font-semibold uppercase tracking-[0.25em] text-emerald-700 shadow-sm">
+            <Leaf size={16} />
+            Our Portfolio
+          </div>
+
+          <h2 className="mt-6 text-3xl font-semibold tracking-tight text-emerald-950 sm:text-4xl lg:text-5xl">
+            See the Quality of Our Tree Care Work
+          </h2>
+
+          <p className="mx-auto mt-5 max-w-2xl text-base leading-8 text-emerald-800/80 sm:text-lg">
+            Explore some of our recent tree removal, trimming, stump grinding, and emergency service projects completed across Michigan.
+          </p>
+        </motion.div>
+
+        <motion.div
+          initial={{ opacity: 0, y: 20 }}
+          whileInView={{ opacity: 1, y: 0 }}
+          transition={{ duration: 0.6, delay: 0.1 }}
+          viewport={{ once: true, amount: 0.2 }}
+          className="mt-10 flex flex-wrap justify-center gap-3"
+        >
+          {categories.map((category) => {
+            const isActive = category === activeCategory;
+            return (
+              <motion.button
+                key={category}
+                whileHover={{ y: -2, scale: 1.02 }}
+                whileTap={{ scale: 0.98 }}
+                transition={{ duration: 0.2 }}
+                onClick={() => {
+                  setActiveCategory(category);
+                  setSelectedIndex(null);
+                }}
+                className={`rounded-full px-4 py-2 text-sm font-semibold transition-all duration-300 ${
+                  isActive
+                    ? "bg-emerald-700 text-white shadow-lg shadow-emerald-700/20"
+                    : "bg-white text-emerald-800 shadow-sm hover:bg-emerald-50"
+                }`}
+              >
+                {category}
+              </motion.button>
+            );
+          })}
+        </motion.div>
+
+        <div className="mt-12 columns-1 gap-6 sm:columns-2 xl:columns-4">
+          {visibleProjects.map((project, index) => (
+            <motion.article
+              key={project.title + index}
+              initial={{ opacity: 0, y: 24 }}
+              whileInView={{ opacity: 1, y: 0 }}
+              transition={{ duration: 0.5, delay: index * 0.06 }}
+              viewport={{ once: true, amount: 0.1 }}
+              whileHover={{ y: -6, scale: 1.01, boxShadow: "0 24px 50px -18px rgba(3, 46, 27, 0.22)" }}
+              className="group mb-6 break-inside-avoid overflow-hidden rounded-[24px] border border-emerald-100/80 bg-white shadow-[0_16px_40px_-20px_rgba(3,46,27,0.25)]"
+            >
+              <button
+                type="button"
+                onClick={() => setSelectedIndex(index)}
+                className="block w-full text-left"
+              >
+                <div className="relative overflow-hidden">
+                  <Image
+                    src={project.image}
+                    alt={project.title}
+                    width={900}
+                    height={700}
+                    className="h-72 w-full object-cover transition duration-500 group-hover:scale-110"
+                    loading="lazy"
+                  />
+                  <div className="absolute inset-0 bg-gradient-to-t from-black/70 via-black/15 to-transparent opacity-0 transition duration-300 group-hover:opacity-100" />
+                  <div className="absolute inset-x-0 bottom-0 translate-y-3 p-5 text-white opacity-0 transition duration-300 group-hover:translate-y-0 group-hover:opacity-100">
+                    <p className="text-xs font-semibold uppercase tracking-[0.3em] text-emerald-200">
+                      {project.category}
+                    </p>
+                    <h3 className="mt-2 text-xl font-semibold">{project.title}</h3>
+                    <div className="mt-3 inline-flex items-center gap-2 text-sm font-semibold text-white">
+                      View Project <ArrowRight size={16} />
+                    </div>
+                  </div>
+                </div>
+              </button>
+
+              <div className="p-5">
+                <p className="text-xs font-semibold uppercase tracking-[0.3em] text-emerald-700">
+                  {project.category}
+                </p>
+                <h3 className="mt-2 text-lg font-semibold text-emerald-950">
+                  {project.title}
+                </h3>
+                <p className="mt-2 text-sm leading-7 text-emerald-800/80">
+                  {project.description}
+                </p>
+              </div>
+            </motion.article>
+          ))}
+        </div>
+
+        <motion.div
+          initial={{ opacity: 0, y: 24 }}
+          whileInView={{ opacity: 1, y: 0 }}
+          transition={{ duration: 0.6, delay: 0.12 }}
+          viewport={{ once: true, amount: 0.2 }}
+          className="mt-16 rounded-[32px] border border-emerald-100 bg-white/80 px-8 py-10 text-center shadow-[0_18px_60px_-24px_rgba(3,46,27,0.25)] sm:px-10"
+        >
+          <h3 className="text-2xl font-semibold text-emerald-950 sm:text-3xl">
+            Ready to Transform Your Property?
+          </h3>
+          <p className="mx-auto mt-4 max-w-2xl text-base leading-8 text-emerald-800/80">
+            Get a free estimate from CRC Tree Service today.
+          </p>
+          <Link
+            href="/contact#estimate-form"
+            className="mt-8 inline-flex items-center justify-center rounded-full bg-orange-500 px-7 py-3 text-sm font-semibold uppercase tracking-[0.2em] text-white shadow-lg shadow-orange-500/20 transition hover:-translate-y-0.5 hover:bg-orange-400"
+            aria-label="Get a free estimate"
+          >
+            Get Free Estimate
+          </Link>
+        </motion.div>
+      </div>
+
+      <AnimatePresence>
+        {selectedProject && (
+          <motion.div
+            initial={{ opacity: 0 }}
+            animate={{ opacity: 1 }}
+            exit={{ opacity: 0 }}
+            className="fixed inset-0 z-[60] flex items-center justify-center bg-black/80 px-4 py-6 backdrop-blur-sm"
+          >
+            <motion.div
+              initial={{ opacity: 0, scale: 0.96, y: 16 }}
+              animate={{ opacity: 1, scale: 1, y: 0 }}
+              exit={{ opacity: 0, scale: 0.96, y: 16 }}
+              transition={{ duration: 0.25 }}
+              className="relative w-full max-w-5xl overflow-hidden rounded-[28px] bg-white shadow-2xl"
+            >
+              <button
+                type="button"
+                onClick={() => setSelectedIndex(null)}
+                className="absolute right-4 top-4 z-10 rounded-full bg-white/90 p-2 text-emerald-900 shadow-lg"
+                aria-label="Close project preview"
+              >
+                <X size={18} />
+              </button>
+
+              <div className="relative aspect-[4/3] w-full bg-emerald-950">
+                <Image
+                  src={selectedProject.image}
+                  alt={selectedProject.title}
+                  fill
+                  className="object-cover"
+                  priority
+                />
+                <div className="absolute inset-0 bg-gradient-to-t from-black/70 via-black/20 to-transparent" />
+                <div className="absolute bottom-0 left-0 right-0 p-6 text-white sm:p-8">
+                  <p className="text-xs font-semibold uppercase tracking-[0.32em] text-emerald-200">
+                    {selectedProject.category}
+                  </p>
+                  <h3 className="mt-2 text-2xl font-semibold sm:text-3xl">
+                    {selectedProject.title}
+                  </h3>
+                  <p className="mt-3 max-w-2xl text-sm leading-7 text-emerald-50/90 sm:text-base">
+                    {selectedProject.description}
+                  </p>
+                </div>
+              </div>
+
+              <div className="flex items-center justify-between border-t border-emerald-100 bg-white px-4 py-4 sm:px-6">
+                <button
+                  type="button"
+                  onClick={() =>
+                    setSelectedIndex((current) =>
+                      current === null || current === 0
+                        ? visibleProjects.length - 1
+                        : current - 1
+                    )
+                  }
+                  className="inline-flex items-center gap-2 rounded-full border border-emerald-200 px-4 py-2 text-sm font-semibold text-emerald-800 transition hover:bg-emerald-50"
+                >
+                  <ChevronLeft size={16} />
+                  Previous
+                </button>
+
+                <button
+                  type="button"
+                  onClick={() =>
+                    setSelectedIndex((current) =>
+                      current === null ? 0 : (current + 1) % visibleProjects.length
+                    )
+                  }
+                  className="inline-flex items-center gap-2 rounded-full border border-emerald-200 px-4 py-2 text-sm font-semibold text-emerald-800 transition hover:bg-emerald-50"
+                >
+                  Next
+                  <ChevronRight size={16} />
+                </button>
+              </div>
+            </motion.div>
+          </motion.div>
+        )}
+      </AnimatePresence>
+    </section>
+  );
+}
