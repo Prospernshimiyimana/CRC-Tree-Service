@@ -24,6 +24,7 @@ const contactInfo = [
     content: "+1 (517) 715-7367",
     link: "tel:+15177157367",
     linkText: "Call Now",
+    external: false,
   },
   {
     icon: Mail,
@@ -31,22 +32,24 @@ const contactInfo = [
     content: "chavezram05340@gmail.com",
     link: "mailto:chavezram05340@gmail.com",
     linkText: "Send Email",
+    external: false,
   },
-  
-   {
-  icon: MapPin,
-  title: "Service Area",
-  content:
-    "Proudly serving Michigan and surrounding communities with safe, professional tree care services.",
-  link: "/contact#estimate-form",
-  linkText: "Get a Free Estimate",
-},
-{
+  {
+    icon: MapPin,
+    title: "Service Area",
+    content:
+      "Proudly serving Michigan and surrounding communities with safe, professional tree care services.",
+    link: "/contact#estimate-form",
+    linkText: "Get a Free Estimate",
+    external: false,
+  },
+  {
     icon: Clock,
     title: "Business Hours",
     content: "Mon - Sat: 7:00 AM - 7:00 PM\nSun: Emergency Only",
-    link: null,
-    linkText: null,
+    link: "",
+    linkText: "",
+    external: false,
   },
 ];
 
@@ -306,17 +309,17 @@ export default function ContactPage() {
                   <p className="text-gray-600 text-sm whitespace-pre-line mb-4">
                     {info.content}
                   </p>
-                  {info.link && (
-                    <a
-                      href={info.link}
-                      target={info.external ? "_blank" : undefined}
-                      rel={info.external ? "noopener noreferrer" : undefined}
-                      className="inline-flex items-center gap-2 text-green-600 font-semibold text-sm hover:text-green-700 transition"
-                    >
-                      {info.linkText}
-                      {info.external && <ExternalLink size={14} />}
-                    </a>
-                  )}
+                 {info.link && (
+  <a
+    href={info.link}
+    target={info.external ? "_blank" : undefined}
+    rel={info.external ? "noopener noreferrer" : undefined}
+    className="inline-flex items-center gap-2 text-green-600 font-semibold text-sm hover:text-green-700 transition"
+  >
+    {info.linkText}
+    {info.external && <ExternalLink size={14} />}
+  </a>
+)}
                 </motion.div>
               );
             })}
