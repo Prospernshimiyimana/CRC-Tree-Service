@@ -384,7 +384,7 @@ export default function ContactPage() {
                       onChange={handleInputChange}
                       required
                       className="w-full px-4 py-3 rounded-xl border border-green-300 focus:border-green-500 focus:ring-2 focus:ring-green-500/20 outline-none transition"
-                      placeholder="Chavez Ram"
+                      placeholder="John doe"
                     />
                   </div>
                   <div>
@@ -423,7 +423,7 @@ export default function ContactPage() {
                       onChange={handleInputChange}
                       required
                       className="w-full px-4 py-3 rounded-xl border border-green-300 focus:border-green-500 focus:ring-2 focus:ring-green-500/20 outline-none transition"
-                      placeholder="chavezramos340@gmail.com"
+                      placeholder="john.doe@example.com"
                     />
                   </div>
                   <div>
