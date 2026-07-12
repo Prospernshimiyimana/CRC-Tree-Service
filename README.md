@@ -170,8 +170,8 @@ Submit a new estimate request.
 **Request Body:**
 ```json
 {
-  "name": "Chavez ram",
-  "email": "chavezram@example.com",
+  "name": "John Doe",
+  "email": "johndoe@example.com",
   "phone": "(517) 715-7367",
   "address": " Lansing, Michigan",
   "service": "tree-removal",
