@@ -116,7 +116,7 @@ DATABASE_URL="postgresql://username:password@ep-example.us-east-2.aws.neon.tech/
 4. Update your `.env` file:
 
 ```env
-DATABASE_URL="postgresql://username:password@your-rds-endpoint.rds.amazonaws.com:5432/lansing_tree_service"
+DATABASE_URL="postgresql://username:password@your-rds-endpoint.rds.amazonaws.com:5432/crc_tree_service"
 ```
 
 ## Verification
