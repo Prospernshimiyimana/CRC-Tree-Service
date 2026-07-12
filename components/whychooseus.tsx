@@ -45,7 +45,7 @@ export default function WhyChooseUs() {
           {/* STATS */}
           <div className="grid grid-cols-2 gap-6 mt-10">
             {[
-              ["2+", "Years Experience"],
+              ["10+", "Years Experience"],
               ["50+", "Projects Completed"],
               ["100%", "Satisfaction"],
               ["24/7", "Emergency Service"],
