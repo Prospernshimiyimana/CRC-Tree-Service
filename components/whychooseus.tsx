@@ -21,7 +21,7 @@ export default function WhyChooseUs() {
           </h2>
 
           <p className="text-gray-600 mt-4">
-            Safe, reliable, and professional tree care backed by years of experience and customer satisfaction.
+            Safe, reliable, and professional tree care serving Michigan and surrounding communities, backed by years of experience and customer satisfaction.
           </p>
 
           {/* TRUST ITEMS */}
@@ -29,7 +29,7 @@ export default function WhyChooseUs() {
             {[
               { icon: ShieldCheck, text: "Licensed & Insured" },
               { icon: Clock, text: "24/7 Emergency Response" },
-              { icon: BadgeCheck, text: "2+ Years Experience" },
+              { icon: BadgeCheck, text: "10+ Years Experience" },
               { icon: ThumbsUp, text: "Free Estimates" },
             ].map((item, i) => (
               <div

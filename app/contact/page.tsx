@@ -38,7 +38,7 @@ const contactInfo = [
     icon: MapPin,
     title: "Service Area",
     content:
-      "Proudly serving Michigan and surrounding communities with safe, professional tree care services.",
+      "Proudly serving customers throughout Michigan with safe, professional tree care services.",
     link: "/contact#estimate-form",
     linkText: "Get a Free Estimate",
     external: false,
@@ -81,7 +81,7 @@ const faqs = [
   {
     question: "Tree Removals",
     answer:
-      "We provide professional tree removal in  Michigan with over 2+ years experience. Removing trees safely is our specialty -  especially those that are 60 ft and at 36 inch diameter at the base or under, by using our bucket truck these trees will be handled quickly & safely.\n\nAs the leading company we have the capital to invest in the necessary equipment, which makes every job more efficient and affordable for you!\n\nAll crew members are properly trained with safety being the number one priority.\n\nThe owner, with over 2+ years experience, oversees all projects.\n\nWe have many satisfied customers & great reviews. If any concerns arise our crew members will address your needs and adjust to meet your requirements.\n\nWe strictly follow the state & national guidelines of safe tree removal.\n\nWe can also include stump removal as well,As the leading company we have the capital to invest in the necessary equipment, which makes every job more efficient and affordable for you!All crew members are properly trained with safety being the number one priority.The owner, with over 2+ years experience, oversees all projects.We have many satisfied customers & great reviews. If any concerns arise our crew members will address your needs and adjust to meet your requirements.We strictly follow the state & national guidelines of safe tree removal.We can also include stump removal as well."
+      "We provide professional tree removal in  Michigan with over 10+ years experience. Removing trees safely is our specialty -  especially those that are 60 ft and at 36 inch diameter at the base or under, by using our bucket truck these trees will be handled quickly & safely.\n\nAs the leading company we have the capital to invest in the necessary equipment, which makes every job more efficient and affordable for you!\n\nAll crew members are properly trained with safety being the number one priority.\n\nThe owner, with over 10+ years experience, oversees all projects.\n\nWe have many satisfied customers & great reviews. If any concerns arise our crew members will address your needs and adjust to meet your requirements.\n\nWe strictly follow the state & national guidelines of safe tree removal.\n\nWe can also include stump removal as well,As the leading company we have the capital to invest in the necessary equipment, which makes every job more efficient and affordable for you!All crew members are properly trained with safety being the number one priority.The owner, with over 10+ years experience, oversees all projects.We have many satisfied customers & great reviews. If any concerns arise our crew members will address your needs and adjust to meet your requirements.We strictly follow the state & national guidelines of safe tree removal.We can also include stump removal as well."
   },
   {
     question: "24 - Hour Emergency Services",

@@ -77,8 +77,7 @@ export default function Hero() {
             transition={{ duration: 0.8, delay: 0.16, ease: "easeOut" }}
             className="mx-auto mt-6 max-w-2xl text-base leading-8 text-emerald-100 sm:text-lg md:text-xl"
           >
-            Safe, Reliable & Affordable Tree Removal, Trimming, and Emergency
-            Services
+            Proudly serving Michigan and surrounding communities with safe, reliable, and affordable tree removal, trimming, and emergency services.
           </motion.p>
 
           <motion.div

@@ -164,7 +164,7 @@ export default function Footer() {
 
             <span>✔ Licensed & Insured</span>
             <span>✔ 24/7 Emergency Service</span>
-            <span>✔ 2+ Years Experience</span>
+            <span>✔ 10+ Years Experience</span>
             <span>✔ Free Estimates</span>
 
           </div>

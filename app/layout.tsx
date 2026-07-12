@@ -3,7 +3,7 @@ import "./globals.css";
 export const metadata = {
   title: "CRC Tree Service | Professional Tree Care",
   description:
-    "Professional tree removal, trimming, stump grinding & emergency services in Michigan.",
+    "Proudly serving Michigan and surrounding communities with professional tree removal, trimming, stump grinding & emergency services.",
 };
 
 export default function RootLayout({

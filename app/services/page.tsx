@@ -124,7 +124,7 @@ const processSteps = [
 
 const trustFeatures = [
   "Licensed & Insured",
-  "2+ Years Experience",
+  "10+ Years Experience",
   "24/7 Emergency Response",
   "Customer Satisfaction Guaranteed",
 ];
@@ -217,8 +217,7 @@ export default function ServicesPage() {
               transition={{ duration: 0.8, delay: 0.16, ease: "easeOut" }}
               className="mx-auto mt-6 max-w-2xl text-base leading-8 text-emerald-100 sm:text-lg md:text-xl"
             >
-              Safe, reliable, and affordable tree care solutions for home owners
-              and businesses in Michigan and surrounding areas.
+              Proudly serving Michigan and surrounding communities with safe, reliable, and affordable tree care solutions for home owners and businesses.
             </motion.p>
 
             <motion.div
@@ -446,7 +445,7 @@ export default function ServicesPage() {
               Why Choose Our Services
             </h2>
             <p className="text-gray-600 mt-4 max-w-2xl mx-auto">
-              Trusted by  Home owners and businesses for over 2+ years.
+              Trusted by  Home owners and businesses for over 10+ years.
             </p>
           </motion.div>
 

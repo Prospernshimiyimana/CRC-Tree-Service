@@ -27,7 +27,7 @@ export default function About() {
           />
 
           <div className="absolute bottom-4 left-4 bg-green-900 text-white px-4 py-2 rounded-full text-sm shadow-lg">
-            Serving Michigan Area
+            Serving All of Michigan
           </div>
         </motion.div>
 
@@ -47,7 +47,7 @@ export default function About() {
           </p>
 
           <p className="text-gray-600 mt-4">
-            With over 2+ years of experience, we specialize in safe tree removal, trimming, stump grinding, and emergency storm response.
+            With over 10+ years of experience, we specialize in safe tree removal, trimming, stump grinding, and emergency storm response.
           </p>
 
           <p className="text-gray-600 mt-4">

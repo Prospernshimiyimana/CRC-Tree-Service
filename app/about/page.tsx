@@ -22,7 +22,7 @@ import Navbar from "@/components/navbar";
 import Footer from "@/components/footer";
 
 const stats = [
-  { number: "2+", label: "Years Experience" },
+  { number: "10+", label: "Years Experience" },
   { number: "50+", label: "Projects Completed" },
   { number: "100%", label: "Customer Satisfaction" },
   { number: "24/7", label: "Emergency Service" },
@@ -217,9 +217,7 @@ export default function AboutPage() {
                 with attention to detail and respect for our customers' properties.
               </p>
               <p className="text-gray-600 leading-relaxed mb-8">
-                For over 2+ years, we've been serving Michigan and surrounding
-                areas, building a reputation for reliability, professionalism, and
-                exceptional results.
+                For over 10+ years, we've been proudly serving customers throughout Michigan with professional tree care services, building a reputation for reliability, professionalism, and exceptional results.
               </p>
 
               <Link
