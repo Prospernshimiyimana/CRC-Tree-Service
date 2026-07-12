@@ -130,11 +130,11 @@ export default function Footer() {
 
 
               <a
-                href="mailto:Chavezram05340@gmail.com"
+                href="mailto:chavezramos340@gmail.com"
                 className="flex items-center gap-2 hover:text-white"
               >
                 <Mail size={16}/>
-                chavezram05340@gmail.com
+                chavezramos340@gmail.com
               </a>
 
 

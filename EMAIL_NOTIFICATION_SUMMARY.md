@@ -124,7 +124,7 @@ FROM_EMAIL="noreply@yourdomain.com"
 # Optional (has defaults)
 COMPANY_NAME="CRC Tree Service"
 COMPANY_PHONE="+1 (517) 715-7367"
-COMPANY_EMAIL="chavezram05340@gmail.com"
+COMPANY_EMAIL="chavezramos340@gmail.com"
 ```
 
 ### Testing Configuration

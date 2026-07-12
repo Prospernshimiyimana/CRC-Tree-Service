@@ -7,12 +7,12 @@ const resend = process.env.RESEND_API_KEY ? new Resend(process.env.RESEND_API_KE
 const COMPANY_INFO = {
   name: process.env.COMPANY_NAME || 'CRC Tree Service',
   phone: process.env.COMPANY_PHONE || '+1 (517) 715-7367',
-  email: process.env.COMPANY_EMAIL || 'chavezram05340@gmail.com',
+  email: process.env.COMPANY_EMAIL || 'chavezramos340@gmail.com',
   website: 'https://crctreeservice.com',
 }
 
 // Owner email from environment
-const OWNER_EMAIL = process.env.OWNER_EMAIL || 'chavezram05340@gmail.com'
+const OWNER_EMAIL = process.env.OWNER_EMAIL || 'chavezramos340@gmail.com'
 const FROM_EMAIL = process.env.FROM_EMAIL || 'noreply@crctreeservice.com'
 
 /**

@@ -36,7 +36,7 @@ Update your `.env` file with the following:
 RESEND_API_KEY="re_your_actual_api_key_here"
 
 # Owner email - where estimate requests will be sent
-OWNER_EMAIL="chavezram05340@gmail.com"
+OWNER_EMAIL="chavezramos340@gmail.com"
 
 # From email - must be a verified domain in Resend
 # For testing, you can use Resend's default domain:
@@ -48,7 +48,7 @@ FROM_EMAIL="onboarding@resend.dev"
 # Company information (optional - has defaults)
 COMPANY_NAME="CRC Tree Service"
 COMPANY_PHONE="+1 (517) 715-7367"
-COMPANY_EMAIL="chavezram05340@gmail.com"
+COMPANY_EMAIL="chavezramos340@gmail.com"
 ```
 
 ## Step 4: Verify Domain (Production)
@@ -312,7 +312,7 @@ FROM_EMAIL="noreply@yourdomain.com"
 # Optional (has defaults)
 COMPANY_NAME="CRC Tree Service"
 COMPANY_PHONE="+1 (517) 715-7367"
-COMPANY_EMAIL="chavezram05340@gmail.com"
+COMPANY_EMAIL="chavezramos340@gmail.com"
 ```
 
 ### Test Command

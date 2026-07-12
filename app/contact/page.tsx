@@ -29,8 +29,8 @@ const contactInfo = [
   {
     icon: Mail,
     title: "Email Us",
-    content: "chavezram05340@gmail.com",
-    link: "mailto:chavezram05340@gmail.com",
+    content: "chavezramos340@gmail.com",
+    link: "mailto:chavezramos340@gmail.com",
     linkText: "Send Email",
     external: false,
   },
@@ -423,7 +423,7 @@ export default function ContactPage() {
                       onChange={handleInputChange}
                       required
                       className="w-full px-4 py-3 rounded-xl border border-green-300 focus:border-green-500 focus:ring-2 focus:ring-green-500/20 outline-none transition"
-                      placeholder="chavezram05340@gmail.com"
+                      placeholder="chavezramos340@gmail.com"
                     />
                   </div>
                   <div>
