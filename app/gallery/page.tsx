@@ -201,7 +201,7 @@ const testimonials = [
     location: "Michigan",
     rating: 5,
     review:
-      "Chavez and his guy did a great job cleaning up the backyard. They cut down all of the trees, grinder the stumps out, and laid down grass seed.",
+      "CRC Tree Service did a great job cleaning up the backyard. They cut down all of the trees, grinder the stumps out, and laid down grass seed.",
     verified: true,
   },
   {
@@ -210,7 +210,7 @@ const testimonials = [
     location: "Michigan",
     rating: 5,
     review:
-      "Chavez and his crew was right on time. Worked with him before a couple years ago, was very pleased. Was very happy to use them again.",
+      "CRC Tree Service was right on time. Worked with them before a couple years ago, was very pleased. Was very happy to use them again.",
     verified: true,
   },
   {

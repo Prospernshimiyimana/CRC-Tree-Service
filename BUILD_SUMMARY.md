@@ -212,8 +212,8 @@ Once PostgreSQL is set up, verify:
 curl -X POST http://localhost:3000/api/estimate \
   -H "Content-Type: application/json" \
   -d '{
-    "name": "Chavez Ram",
-    "email": "chavezram@example.com",
+    "name": "Test User",
+    "email": "test@example.com",
     "phone": "(517) 715-7367",
     "address": "123 Main St, Lansing, Michigan",
     "service": "tree-removal",
