@@ -6,9 +6,9 @@ import Link from "next/link";
 import { useEffect, useState } from "react";
 
 const slides = [
-  { src: "/images/tree%202%20copy.jpg", alt: "Tree care background" },
-  { src: "/images/tree%205%20copy.jpg", alt: "Professional arborist in forest" },
-  { src: "/images/tree%206.jpg", alt: "Tree service landscape at dusk" },
+  { src: "/images/tree removal 2 copy.avif", alt: "Tree care background" },
+  { src: "/images/tree removal 3 copy.avif", alt: "Professional arborist in forest" },
+  { src: "/images/tree removal 4 copy.avif", alt: "Tree service landscape at dusk" },
 ];
 
 export default function Hero() {

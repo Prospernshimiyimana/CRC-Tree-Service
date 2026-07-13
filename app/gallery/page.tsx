@@ -14,7 +14,7 @@ import {
   Zap,
   Check,
 } from "lucide-react";
-import { useEffect, useState } from "react";
+import { useState } from "react";
 import Navbar from "@/components/navbar";
 import Footer from "@/components/footer";
 
@@ -36,20 +36,20 @@ const categories = [
 const projects = [
   {
     id: 1,
-    title: "Oak Tree Removal",
+    title: "Tree Removal",
     location: " Michigan",
     service: "Tree Removal",
     category: "removal",
-    image: "/images/gallery tree copy.jpg",
-    description: "Safe removal of large oak tree with minimal property impact.",
+    image: "/images/tree removal 3 copy.avif",
+    description: "Safe removal of large tree with minimal property impact.",
   },
   {
     id: 2,
-    title: "Maple Tree Trimming",
+    title: "Tree Trimming",
     location: "East Lansing, MI",
     service: "Tree Trimming & Pruning",
     category: "trimming",
-    image: "/images/tree 12 copy.jpg",
+    image: "/images/tree trimming 1 copy.jpg",
     description: "Professional trimming to improve tree health and aesthetics.",
   },
   {
@@ -58,7 +58,7 @@ const projects = [
     location: "Okemos, MI",
     service: "Stump Grinding",
     category: "stump",
-    image: "/images/grind tree 4 copy.jpg",
+    image: "/images/tree grinding 1 copy.webp",
     description: "Complete stump removal and site restoration.",
   },
   {
@@ -67,25 +67,25 @@ const projects = [
     location: "Holt, MI",
     service: "Emergency Service",
     category: "emergency",
-    image: "/images/emergency%20photo.jpeg",
+    image: "/images/tree emergency 1 copy.jpg",
     description: "Rapid response to storm damage with full cleanup.",
   },
   {
     id: 5,
-    title: "Pine Tree Removal",
+    title: "Tree Removal",
     location: "Haslett, MI",
     service: "Tree Removal",
     category: "removal",
-    image: "/images/tree removal copy.jpg",
+    image: "/images/tree removal 4 copy.avif",
     description: "Careful removal of hazardous pine tree near power lines.",
   },
   {
     id: 6,
-    title: " Tree Pruning",
+    title: " Tree Prunning",
     location: "Dewitt, MI",
     service: "Tree Trimming",
     category: "trimming",
-    image: "/images/trim tree 5 copy.jpg",
+    image: "/images/tree prunning copy.avif",
     description: "Expert pruning for fruit production and tree health.",
   },
   {
@@ -94,7 +94,7 @@ const projects = [
     location: "Grand Ledge, MI",
     service: "Stump Grinding",
     category: "stump",
-    image: "/images/grind%20tree%20copy.jpg",
+    image: "/images/tree grinding 2 copy.jpg",
     description: "Efficient removal of multiple stumps for landscaping.",
   },
   {
@@ -103,7 +103,7 @@ const projects = [
     location: "Mason, MI",
     service: "Emergency Service",
     category: "emergency",
-    image: "/images/emergency tree 4 copy.jpg",
+    image: "/images/tree emergency 3 copy.jpg",
     description: "24/7 emergency response for fallen tree blocking driveway.",
   },
   {
@@ -112,7 +112,7 @@ const projects = [
     location: "Lansing, MI",
     service: "Tree Removal",
     category: "removal",
-    image: "/images/tree%202%20copy.jpg",
+    image: "/images/tree removal 5 copy.avif",
     description: "Precision removal of birch tree in residential yard.",
   },
   {
@@ -121,7 +121,7 @@ const projects = [
     location: "East Lansing, MI",
     service: "Tree Trimming",
     category: "trimming",
-    image: "/images/trim%20tree%202%20copy.jpg",
+    image: "/images/tree trimming 3 copy.jpg",
     description: "Complete shrub and hedge trimming for property enhancement.",
   },
   {
@@ -130,7 +130,7 @@ const projects = [
     location: "Okemos, MI",
     service: "Stump Grinding",
     category: "stump",
-    image: "/images/grind tree 2 copy.jpg",
+    image: "/images/tree grinding 3 copy.jpg",
     description: "Heavy-duty stump grinding for commercial property.",
   },
   {
@@ -139,27 +139,8 @@ const projects = [
     location: "Holt, MI",
     service: "Emergency Service",
     category: "emergency",
-    image: "/images/emergency tree 3 copy.jpg",
+    image: "/images/tree emergency 4 copy.jpg",
     description: "Emergency tree removal after severe wind storm.",
-  },
-];
-
-const beforeAfterProjects = [
-  {
-    id: 1,
-    title: "Backyard Transformation",
-    service: "Tree Removal",
-    location: " Michigan",
-    before: "/images/tree%202%20copy.jpg",
-    after: "/images/grind%20tree%20copy.jpg",
-  },
-  {
-    id: 2,
-    title: "Property Cleanup",
-    service: "Stump Grinding",
-    location: "Michigan",
-    before: "/images/tree%202%20copy.jpg",
-    after: "/images/grind%20tree%20copy.jpg",
   },
 ];
 
@@ -168,7 +149,7 @@ const spotlightProject = {
   location: "Michigan",
   services: ["Tree Removal", "Tree Trimming", "Stump Grinding"],
   timeCompleted: "March 2025",
-  image: "/images/about%20image%20copy.jpg",
+  image: "/images/tree grinding 3 copy.jpg",
   outcome:
     "Transformed a residential property by removing hazardous trees, trimming remaining trees for health, and grinding all stumps. Customer was extremely satisfied with the complete transformation.",
 };
@@ -182,13 +163,13 @@ const videos = [
   },
   {
     id: 2,
-    title: "Tree Trimming & Pruning",
+    title: "Tree Trimming & Prunning",
     description: "See how we trim and prune trees to promote healthy growth and beautiful aesthetics.",
     src: "/videos/tree video 1.mp4",
   },
   {
     id: 3,
-    title: "Emergency Tree Service",
+    title: "Tree Trimming",
     description: "Our 24/7 emergency response team in action, handling urgent tree situations.",
     src: "/videos/tree video 2.mp4",
   },
@@ -234,114 +215,6 @@ const serviceAreas = [
   "Dewitt",
   "Mason",
 ];
-
-type BeforeAfterProject = (typeof beforeAfterProjects)[number];
-
-function BeforeAfterCard({ project }: { project: BeforeAfterProject }) {
-  const [sliderPosition, setSliderPosition] = useState(50);
-  const [dragging, setDragging] = useState(false);
-
-  useEffect(() => {
-    if (!dragging) return;
-
-    const handleMove = (event: MouseEvent | TouchEvent) => {
-      const clientX = "touches" in event ? event.touches[0].clientX : event.clientX;
-      const rect = document
-        .getElementById(`before-after-${project.id}`)
-        ?.getBoundingClientRect();
-
-      if (!rect) return;
-      const next = ((clientX - rect.left) / rect.width) * 100;
-      setSliderPosition(Math.min(100, Math.max(0, next)));
-    };
-
-    const stopDrag = () => setDragging(false);
-
-    window.addEventListener("mousemove", handleMove as EventListener);
-    window.addEventListener("mouseup", stopDrag);
-    window.addEventListener("touchmove", handleMove as EventListener);
-    window.addEventListener("touchend", stopDrag);
-
-    return () => {
-      window.removeEventListener("mousemove", handleMove as EventListener);
-      window.removeEventListener("mouseup", stopDrag);
-      window.removeEventListener("touchmove", handleMove as EventListener);
-      window.removeEventListener("touchend", stopDrag);
-    };
-  }, [dragging, project.id]);
-
-  return (
-    <motion.div
-      initial={{ opacity: 0, y: 24 }}
-      whileInView={{ opacity: 1, y: 0 }}
-      transition={{ duration: 0.6 }}
-      viewport={{ once: true, amount: 0.2 }}
-      className="overflow-hidden rounded-[28px] border border-emerald-100 bg-white shadow-[0_24px_70px_-28px_rgba(4,47,33,0.24)]"
-    >
-      <div
-        id={`before-after-${project.id}`}
-        className="relative aspect-[4/3] cursor-ew-resize overflow-hidden"
-        onMouseDown={() => setDragging(true)}
-        onTouchStart={() => setDragging(true)}
-      >
-        <Image
-          src={project.after}
-          alt={`${project.title} after`}
-          fill
-          sizes="(max-width: 768px) 100vw, 50vw"
-          className="object-cover"
-          loading="lazy"
-        />
-
-        <div
-          className="absolute inset-y-0 overflow-hidden"
-          style={{ width: `${sliderPosition}%` }}
-        >
-          <Image
-            src={project.before}
-            alt={`${project.title} before`}
-            fill
-            sizes="(max-width: 768px) 100vw, 50vw"
-            className="object-cover"
-            loading="lazy"
-          />
-        </div>
-
-        <div
-          className="absolute inset-y-0 w-[2px] bg-white shadow-[0_0_0_1px_rgba(255,255,255,0.4)]"
-          style={{ left: `${sliderPosition}%` }}
-        />
-
-        <div className="absolute bottom-4 left-4 rounded-full bg-black/70 px-3 py-1 text-sm font-medium text-white">
-          Before
-        </div>
-        <div className="absolute bottom-4 right-4 rounded-full bg-emerald-700/90 px-3 py-1 text-sm font-medium text-white">
-          After
-        </div>
-        <div
-          className="absolute top-1/2 flex h-10 w-10 -translate-x-1/2 -translate-y-1/2 items-center justify-center rounded-full border border-white bg-white/90 text-emerald-800 shadow-lg"
-          style={{ left: `${sliderPosition}%` }}
-        >
-          <ArrowRight size={16} />
-        </div>
-      </div>
-
-      <div className="p-6">
-        <h3 className="text-xl font-semibold text-emerald-950">{project.title}</h3>
-        <div className="mt-3 flex flex-wrap items-center gap-3 text-sm text-emerald-700/80">
-          <span className="inline-flex items-center gap-2 rounded-full bg-emerald-50 px-3 py-1.5">
-            <TreePine size={14} />
-            {project.service}
-          </span>
-          <span className="inline-flex items-center gap-2 rounded-full bg-emerald-50 px-3 py-1.5">
-            <MapPin size={14} />
-            {project.location}
-          </span>
-        </div>
-      </div>
-    </motion.div>
-  );
-}
 
 export default function GalleryPage() {
   const [activeCategory, setActiveCategory] = useState("all");

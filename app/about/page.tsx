@@ -119,7 +119,7 @@ export default function AboutPage() {
       <section className="relative min-h-screen overflow-hidden bg-[#042109]">
         <div className="absolute inset-0">
           <Image
-            src="/images/about%20image%20copy.jpg"
+            src="/images/tree removal 4 copy.avif"
             alt="Professional tree service team at work"
             fill
             sizes="100vw"

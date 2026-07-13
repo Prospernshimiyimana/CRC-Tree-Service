@@ -56,7 +56,7 @@ const detailedServices = [
       "Complete debris removal",
       "Property protection guaranteed",
     ],
-    image: "/images/tree%202%20copy.jpg",
+    image: "/images/tree removal 6 copy.avif",
   },
   {
     id: "tree-trimming",
@@ -69,7 +69,7 @@ const detailedServices = [
       "Storm damage prevention",
       "Expert arborist consultation",
     ],
-    image: "/images/trim%20tree%202%20copy.jpg",
+    image: "/images/tree trimming 2 copy.jpg",
   },
   {
     id: "stump-grinding",
@@ -82,20 +82,20 @@ const detailedServices = [
       "Site restoration",
       "Same-day service available",
     ],
-    image: "/images/grind tree copy.jpg",
+    image: "/images/tree grinding 2 copy.jpg",
   },
   {
     id: "emergency-service",
     title: "24/7 Emergency Tree Services",
     description:
-      "When storms strike or trees fall, we're here fast. Our emergency response team is available around the clock to handle dangerous situations and protect your property from further damage.",
+      "When trees fall, we're here fast. Our emergency response team is available around the clock to handle dangerous situations and protect your property from further damage.",
     benefits: [
       "Rapid response time",
       "24/7 availability",
       "Storm damage cleanup",
       "Insurance claim assistance",
     ],
-    image: "/images/emergency%20photo.jpeg",
+    image: "/images/tree emergency copy.jpg",
   },
 ];
 
@@ -181,7 +181,7 @@ export default function ServicesPage() {
       <section className="relative min-h-screen overflow-hidden bg-[#042109]">
         <div className="absolute inset-0">
           <Image
-            src="/images/grind%20tree%20copy.jpg"
+            src="/images/tree emergency 1 copy.jpg"
             alt="Professional tree service background"
             fill
             sizes="100vw"

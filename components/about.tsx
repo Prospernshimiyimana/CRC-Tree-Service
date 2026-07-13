@@ -17,7 +17,7 @@ export default function About() {
           className="relative group"
         >
           <img
-            src="/images/tree 7 copy.jpg"
+            src="/images/tree removal 5 copy.avif"
             alt="Tree service work"
             className="
               rounded-2xl shadow-xl

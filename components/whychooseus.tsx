@@ -78,7 +78,7 @@ export default function WhyChooseUs() {
           </motion.div>
         </motion.div>
 
-        {/* RIGHT IMAGE */}
+        {/* RIGHT VIDEO */}
         <motion.div
           initial={{ opacity: 0, scale: 0.95 }}
           whileInView={{ opacity: 1, scale: 1 }}
@@ -86,13 +86,17 @@ export default function WhyChooseUs() {
           viewport={{ once: true }}
           className="relative group"
         >
-          <img
-            src="/images/tree 8 copy.jpg"
-            alt="Tree service crew"
+          <video
+            src="/videos/why choose us video copy.mp4"
+            autoPlay
+            muted
+            loop
+            playsInline
             className="
               rounded-2xl shadow-xl
               transition duration-500
               group-hover:scale-105
+              w-full h-auto
             "
           />
 

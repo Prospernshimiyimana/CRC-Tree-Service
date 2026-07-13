@@ -25,52 +25,52 @@ const categories: Category[] = [
 
 const projects: Project[] = [
   {
-    title: "Large Oak Removal",
+    title: "Large Tree Removal",
     category: "Tree Removal",
-    image: "/images/tree%202%20copy.jpg",
-    description: "Safe and efficient removal of a hazardous oak near the driveway and roofline.",
+    image: "/images/tree removal 3 copy.avif",
+    description: "Safe and efficient removal of a hazardous tree near the driveway and roofline.",
   },
   {
-    title: "Canopy Sculpting",
+    title: "Trees that had their top halves cut down",
     category: "Tree Trimming",
-    image: "/images/tree 14 copy.jpg",
+    image: "/images/tree removal 2 copy.avif",
     description: "Precision pruning to improve structure, airflow, and curb appeal.",
   },
   {
     title: "Stump Reclamation",
     category: "Stump Grinding",
-    image: "/images/tree 12 copy.jpg",
+    image: "/images/tree grinding 1 copy.webp",
     description: "Complete stump removal for a clean, usable backyard space.",
   },
   {
     title: "Storm Response Cleanup",
     category: "Emergency",
-    image: "/images/emergency tree 3 copy.jpg",
+    image: "/images/tree emergency 1 copy.jpg",
     description: "Rapid removal and debris clearing after a severe wind event.",
   },
   {
     title: "Front Yard Hazard Tree",
     category: "Tree Removal",
-    image: "/images/tree 8 copy.jpg",
+    image: "/images/tree removal 6 copy.avif",
     description: "Careful removal of a leaning tree protecting the home and street view.",
   },
   {
     title: "Crown Reduction",
     category: "Tree Trimming",
-    image: "/images/trim tree 5 copy.jpg",
+    image: "/images/tree trimming 1 copy.jpg",
     description: "Selective crown reduction for balanced growth and improved light access.",
   },
   {
     title: "Root-Level Stump Removal",
     category: "Stump Grinding",
-    image: "/images/tree%206.jpg",
+    image: "/images/tree grinding 2 copy.jpg",
     description: "Deep grinding that leaves the space ready for landscaping or lawn.",
   },
   {
-    title: "Emergency Limb Removal",
+    title: "Emergency Tree Removal",
     category: "Emergency",
-    image: "/images/tree 5 copy.jpg",
-    description: "Immediate support for dangerous hanging limbs and storm damage.",
+    image: "/images/tree emergency copy.jpg",
+    description: "Immediate support for dangerous hanging damage.",
   },
 ];
 
