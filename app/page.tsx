@@ -4,6 +4,7 @@ import Services  from  "@/components/services";
 import WhyChooseUs from "@/components/whychooseus";
 import About from "@/components/about";
 import Gallery from "@/components/gallery";
+import Testimonials from "@/components/testimonials";
 import Footer from "@/components/footer";
 
 export default function Home() {
@@ -15,8 +16,9 @@ export default function Home() {
       <WhyChooseUs />
       <About />
       <Gallery />
+      <Testimonials />
       <Footer />
-      
+
     </main>
   );
 }
