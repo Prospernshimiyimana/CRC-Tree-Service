@@ -306,7 +306,7 @@ export async function sendCustomerConfirmationEmail(data: EstimateEmailData): Pr
   }
 
   try {
-    const subject = `We Received Your Free Estimate Request - CRC Tree Service`
+    const subject = `Your CRC Tree Service Estimate Request Received`
     const html = createCustomerConfirmationHTML(data)
 
     const result = await resend.emails.send({
