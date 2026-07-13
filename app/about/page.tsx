@@ -267,6 +267,60 @@ export default function AboutPage() {
         </div>
       </section>
 
+      {/* SERVICE AREAS */}
+      <section className="py-24 bg-[#F8FAFC] relative overflow-hidden">
+        <div className="absolute inset-0">
+          <div className="absolute top-20 left-1/4 w-96 h-96 bg-green-500/5 rounded-full blur-3xl" />
+          <div className="absolute bottom-20 right-1/4 w-96 h-96 bg-orange-500/5 rounded-full blur-3xl" />
+        </div>
+
+        <div className="relative max-w-6xl mx-auto px-6">
+          <motion.div
+            initial={{ opacity: 0, y: 24 }}
+            whileInView={{ opacity: 1, y: 0 }}
+            transition={{ duration: 0.6 }}
+            viewport={{ once: true, amount: 0.2 }}
+            className="text-center mb-14"
+          >
+            <div className="inline-flex items-center gap-2 rounded-full border border-green-200/40 bg-green-50 px-4 py-2 text-sm font-medium text-green-700 mb-4">
+              <MapPin size={16} />
+              Service Areas
+            </div>
+            <h2 className="text-4xl md:text-5xl font-bold text-green-900 mb-4">
+              Proudly Serving Michigan & Surrounding Communities
+            </h2>
+            <p className="text-gray-600 max-w-2xl mx-auto">
+              CRC Tree Service proudly provides professional tree removal, tree
+              trimming, stump grinding, and emergency tree services throughout
+              Michigan and nearby communities.
+            </p>
+          </motion.div>
+
+          <div className="flex flex-wrap justify-center gap-4">
+            {serviceAreas.map((area, index) => (
+              <motion.div
+                key={area}
+                initial={{ opacity: 0, y: 12 }}
+                whileInView={{ opacity: 1, y: 0 }}
+                transition={{ duration: 0.4, delay: index * 0.05 }}
+                viewport={{ once: true, amount: 0.2 }}
+                whileHover={{ y: -4 }}
+                className="bg-white px-6 py-4 rounded-xl shadow-md hover:shadow-lg hover:border-green-500 border-2 border-transparent transition-all duration-300 flex items-center gap-3 cursor-default"
+              >
+                <motion.div
+                  whileHover={{ scale: 1.2, rotate: 10 }}
+                  transition={{ duration: 0.2 }}
+                  className="flex-shrink-0 w-10 h-10 bg-gradient-to-br from-green-500 to-green-600 rounded-full flex items-center justify-center shadow-md"
+                >
+                  <MapPin size={18} className="text-white" />
+                </motion.div>
+                <span className="font-semibold text-green-900">{area}</span>
+              </motion.div>
+            ))}
+          </div>
+        </div>
+      </section>
+
       {/* MISSION & VALUES */}
       <section className="py-24 bg-gradient-to-b from-green-900 to-green-950 text-white">
         <div className="max-w-6xl mx-auto px-6">
@@ -488,77 +542,6 @@ export default function AboutPage() {
           </div>
         </div>
       </section>
-
-      {/* SERVICE AREAS */}
-      <section className="py-24 bg-[#F8FAFC] relative overflow-hidden">
-        <div className="absolute inset-0">
-          <div className="absolute top-20 left-1/4 w-96 h-96 bg-green-500/5 rounded-full blur-3xl" />
-          <div className="absolute bottom-20 right-1/4 w-96 h-96 bg-orange-500/5 rounded-full blur-3xl" />
-        </div>
-
-        <div className="relative max-w-6xl mx-auto px-6">
-          <motion.div
-            initial={{ opacity: 0, y: 24 }}
-            whileInView={{ opacity: 1, y: 0 }}
-            transition={{ duration: 0.6 }}
-            viewport={{ once: true, amount: 0.2 }}
-            className="text-center mb-14"
-          >
-            <div className="inline-flex items-center gap-2 rounded-full border border-green-200/40 bg-green-50 px-4 py-2 text-sm font-medium text-green-700 mb-4">
-              <MapPin size={16} />
-              Service Areas
-            </div>
-            <h2 className="text-4xl md:text-5xl font-bold text-green-900 mb-4">
-              Proudly Serving Michigan & Surrounding Communities
-            </h2>
-            <p className="text-gray-600 max-w-2xl mx-auto">
-              CRC Tree Service proudly provides professional tree removal, tree
-              trimming, stump grinding, and emergency tree services throughout
-              Michigan and nearby communities.
-            </p>
-          </motion.div>
-
-          <div className="grid lg:grid-cols-5 gap-8">
-            {/* Left Column - Service Areas */}
-            <motion.div
-              initial={{ opacity: 0, x: -24 }}
-              whileInView={{ opacity: 1, x: 0 }}
-              transition={{ duration: 0.6 }}
-              viewport={{ once: true, amount: 0.2 }}
-              className="lg:col-span-2 space-y-6"
-            >
-              <div className="grid grid-cols-2 gap-4">
-                {serviceAreas.map((area, index) => (
-                  <motion.div
-                    key={area}
-                    initial={{ opacity: 0, y: 12 }}
-                    whileInView={{ opacity: 1, y: 0 }}
-                    transition={{ duration: 0.4, delay: index * 0.05 }}
-                    viewport={{ once: true, amount: 0.2 }}
-                    whileHover={{ y: -4 }}
-                    className="bg-white p-4 rounded-xl shadow-md hover:shadow-lg hover:border-green-500 border-2 border-transparent transition-all duration-300 flex items-center gap-3 cursor-default"
-                  >
-                    <motion.div
-                      whileHover={{ scale: 1.2, rotate: 10 }}
-                      transition={{ duration: 0.2 }}
-                      className="flex-shrink-0 w-10 h-10 bg-gradient-to-br from-green-500 to-green-600 rounded-full flex items-center justify-center shadow-md"
-                    >
-                      <MapPin size={18} className="text-white" />
-                    </motion.div>
-                    <span className="font-semibold text-green-900">{area}</span>
-                  </motion.div>
-                ))}
-              </div>
-
-              
-              
-            </motion.div>
-
-        </div>
-        </div>
-      </section>
-
-      
 
       <Footer />
     </>
