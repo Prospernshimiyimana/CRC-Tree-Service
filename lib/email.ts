@@ -7,13 +7,13 @@ const resend = process.env.RESEND_API_KEY ? new Resend(process.env.RESEND_API_KE
 const COMPANY_INFO = {
   name: process.env.COMPANY_NAME || 'CRC Tree Service',
   phone: process.env.COMPANY_PHONE || '+1 (517) 715-7367',
-  email: process.env.COMPANY_EMAIL || 'chavezramos340@gmail.com',
+  email: process.env.COMPANY_EMAIL || '',
   website: 'https://crctreeservice.com',
 }
 
 // Owner email from environment
-const OWNER_EMAIL = process.env.OWNER_EMAIL || 'chavezramos340@gmail.com'
-const FROM_EMAIL = process.env.FROM_EMAIL || 'noreply@crctreeservice.com'
+const OWNER_EMAIL = process.env.OWNER_EMAIL || ''
+const FROM_EMAIL = process.env.FROM_EMAIL || ''
 
 /**
  * Estimate request data type for email templates
@@ -163,8 +163,9 @@ function createOwnerNotificationHTML(data: EstimateEmailData): string {
     </div>
 
     <div class="footer">
-      <p><strong>${COMPANY_INFO.name}</strong></p>
-      <p>Phone: <a href="tel:${COMPANY_INFO.phone}">${COMPANY_INFO.phone}</a> | Email: <a href="mailto:${COMPANY_INFO.email}">${COMPANY_INFO.email}</a></p>
+      <p><strong>Best regards,</strong></p>
+      <p><strong>CRC Tree Service</strong></p>
+      <p>Email: <a href="mailto:${COMPANY_INFO.email}">${COMPANY_INFO.email}</a></p>
       <p style="margin-top: 8px; font-size: 11px;">This email was automatically generated from your website's estimate request form.</p>
     </div>
   </div>
@@ -227,53 +228,31 @@ function createCustomerConfirmationHTML(data: EstimateEmailData): string {
       <p class="greeting">Hello ${data.name},</p>
       
       <p class="message">
-        Thank you for contacting ${COMPANY_INFO.name}! We have successfully received your estimate request for <strong>${formatServiceName(data.service)}</strong>. Our team will review your request and get back to you within <strong>24 hours</strong>.
+        Thank you for contacting CRC Tree Service.
       </p>
 
-      <div class="details-box">
-        <h3>Your Request Summary</h3>
-        <div class="field">
-          <span class="field-label">Request ID:</span>
-          <span class="field-value">${data.id}</span>
-        </div>
-        <div class="field">
-          <span class="field-label">Service:</span>
-          <span class="field-value">${formatServiceName(data.service)}</span>
-        </div>
-        <div class="field">
-          <span class="field-label">Submitted:</span>
-          <span class="field-value">${formatDate(data.createdAt)}</span>
-        </div>
-        ${data.preferredContact ? `
-        <div class="field">
-          <span class="field-label">We'll contact you via:</span>
-          <span class="field-value">${data.preferredContact.charAt(0).toUpperCase() + data.preferredContact.slice(1)}</span>
-        </div>` : ''}
-      </div>
+      <p class="message">
+        We have successfully received your free estimate request.
+      </p>
 
-      <div class="info-section">
-        <h3>What Happens Next?</h3>
-        <p style="color: #374151; margin-bottom: 12px;">1. Our team will review your request details.</p>
-        <p style="color: #374151; margin-bottom: 12px;">2. We'll contact you via ${data.preferredContact || 'phone'} to discuss your needs.</p>
-        <p style="color: #374151; margin-bottom: 12px;">3. We'll schedule an on-site visit if needed.</p>
-        <p style="color: #374151;">4. You'll receive your free estimate promptly.</p>
-      </div>
+      <p class="message">
+        Our team will review your request and contact you as soon as possible.
+      </p>
 
-      <div class="info-section">
-        <h3>Need Immediate Assistance?</h3>
-        <p style="color: #374151; margin-bottom: 16px;">If you have an emergency or need to speak with us right away, please don't hesitate to call:</p>
-        <a href="tel:${COMPANY_INFO.phone}" class="cta-button">📞 ${COMPANY_INFO.phone}</a>
-      </div>
+      <p class="message">
+        If your request is urgent, please call us directly.
+      </p>
 
       <p class="message" style="margin-top: 24px;">
-        Thank you for choosing ${COMPANY_INFO.name}. We look forward to serving you!
+        Thank you for choosing CRC Tree Service.
       </p>
     </div>
 
     <div class="footer">
-      <p><strong>${COMPANY_INFO.name}</strong></p>
-      <p> Michigan | Phone: <a href="tel:${COMPANY_INFO.phone}">${COMPANY_INFO.phone}</a></p>
-      <p style="margin-top: 8px; font-size: 11px;">© ${new Date().getFullYear()} ${COMPANY_INFO.name}. All rights reserved.</p>
+      <p><strong>Best regards,</strong></p>
+      <p><strong>CRC Tree Service</strong></p>
+      <p>Email: <a href="mailto:${COMPANY_INFO.email}">${COMPANY_INFO.email}</a></p>
+      <p style="margin-top: 8px; font-size: 11px;">© ${new Date().getFullYear()} CRC Tree Service. All rights reserved.</p>
       <p style="margin-top: 4px; font-size: 11px;">You received this email because you submitted an estimate request on our website.</p>
     </div>
   </div>
@@ -292,7 +271,7 @@ export async function sendOwnerNotificationEmail(data: EstimateEmailData): Promi
   }
 
   try {
-    const subject = `🌳 New Estimate Request - ${formatServiceName(data.service)} - ${data.name}`
+    const subject = `New Free Estimate Request - CRC Tree Service`
     const html = createOwnerNotificationHTML(data)
 
     const result = await resend.emails.send({
@@ -327,7 +306,7 @@ export async function sendCustomerConfirmationEmail(data: EstimateEmailData): Pr
   }
 
   try {
-    const subject = `We Received Your Estimate Request - ${COMPANY_INFO.name}`
+    const subject = `We Received Your Free Estimate Request - CRC Tree Service`
     const html = createCustomerConfirmationHTML(data)
 
     const result = await resend.emails.send({

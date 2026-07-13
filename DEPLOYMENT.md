@@ -1,6 +1,6 @@
 # CRC Tree Service - Deployment Guide
 
-This guide covers deploying the Lansing Tree Service website to production.
+This guide covers deploying the CRC Tree Service website to production.
 
 ## Pre-Deployment Checklist
 
@@ -17,14 +17,14 @@ This guide covers deploying the Lansing Tree Service website to production.
 Neon offers serverless PostgreSQL with excellent free tier.
 
 1. **Create Account**: Go to [neon.tech](https://neon.tech) and sign up
-2. **Create Project**: Click "Create Project" → Name it "lansing-tree-service"
+2. **Create Project**: Click "Create Project" → Name it "crc-tree-service"
 3. **Get Connection String**:
    - Go to Project Settings → Connection Details
    - Copy the "Connection string" (URI mode)
 4. **Configure Environment**:
    ```bash
    # In your deployment platform, set:
-   DATABASE_URL="postgresql://username:password@ep-example.us-east-2.aws.neon.tech/lansing_tree_service?sslmode=require"
+   DATABASE_URL="postgresql://username:password@ep-example.us-east-2.aws.neon.tech/neondb?sslmode=require&channel_binding=require"
    ```
 5. **Run Migrations**:
    ```bash
@@ -54,11 +54,11 @@ For enterprise deployments requiring full control.
 2. **Create Database**:
    ```bash
    psql -h your-rds-endpoint.rds.amazonaws.com -U postgres
-   CREATE DATABASE lansing_tree_service;
+   CREATE DATABASE neondb;
    ```
 3. **Configure Environment**:
    ```bash
-   DATABASE_URL="postgresql://username:password@your-rds-endpoint.rds.amazonaws.com:5432/lansing_tree_service"
+   DATABASE_URL="postgresql://username:password@your-rds-endpoint.rds.amazonaws.com:5432/neondb"
    ```
 
 ## Deployment Platforms
@@ -167,7 +167,7 @@ npm ci --only=production
 npx prisma generate
 npx prisma migrate deploy
 npm run build
-pm2 start npm --name "lansing-tree-service" -- start
+pm2 start npm --name "crc-tree-service" -- start
 ```
 
 ## Environment Variables
@@ -183,6 +183,12 @@ pm2 start npm --name "lansing-tree-service" -- start
 | Variable | Description | Default |
 |----------|-------------|---------|
 | `NODE_ENV` | Environment name | `production` |
+| `RESEND_API_KEY` | Resend API key for email notifications | - |
+| `OWNER_EMAIL` | Business owner email for notifications | - |
+| `FROM_EMAIL` | From email address for outgoing emails | - |
+| `COMPANY_NAME` | Company name for email templates | CRC Tree Service |
+| `COMPANY_PHONE` | Company phone number | +1 (517) 715-7367 |
+| `COMPANY_EMAIL` | Company contact email | - |
 
 ## Post-Deployment Tasks
 
@@ -463,5 +469,5 @@ jobs:
 
 ---
 
-**Last Updated**: 2024-01-01  
-**Version**: 1.0.0
+**Last Updated**: 2026-07-13  
+**Version**: 1.1.0

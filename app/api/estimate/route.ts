@@ -150,7 +150,7 @@ export async function POST(request: NextRequest) {
  */
 export async function GET() {
   return NextResponse.json({
-    name: 'Lansing Tree Service Estimate API',
+    name: 'CRC Tree Service Estimate API',
     version: '1.1.0',
     status: 'healthy',
     features: {

@@ -1,6 +1,6 @@
 # Email Notification System Setup Guide
 
-This guide will help you configure the Resend email service for the Lansing Tree Service estimate request system.
+This guide will help you configure the Resend email service for the CRC Tree Service estimate request system.
 
 ## Overview
 
