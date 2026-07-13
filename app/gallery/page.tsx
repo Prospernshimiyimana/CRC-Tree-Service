@@ -20,7 +20,7 @@ import Footer from "@/components/footer";
 
 const projectStats = [
   { number: "50+", label: "Projects Completed" },
-  { number: "2+", label: "Years Experience" },
+  { number: "10+", label: "Years Experience" },
   { number: "100%", label: "Customer Satisfaction" },
   { number: "24/7", label: "Emergency Response" },
 ];
@@ -172,6 +172,27 @@ const spotlightProject = {
   outcome:
     "Transformed a residential property by removing hazardous trees, trimming remaining trees for health, and grinding all stumps. Customer was extremely satisfied with the complete transformation.",
 };
+
+const videos = [
+  {
+    id: 1,
+    title: "Professional Tree Removal",
+    description: "Watch our expert team safely remove large trees with precision and care.",
+    src: "/videos/tree video.mp4",
+  },
+  {
+    id: 2,
+    title: "Tree Trimming & Pruning",
+    description: "See how we trim and prune trees to promote healthy growth and beautiful aesthetics.",
+    src: "/videos/tree video 1.mp4",
+  },
+  {
+    id: 3,
+    title: "Emergency Tree Service",
+    description: "Our 24/7 emergency response team in action, handling urgent tree situations.",
+    src: "/videos/tree video 2.mp4",
+  },
+];
 
 const testimonials = [
   {
@@ -555,7 +576,58 @@ export default function GalleryPage() {
         </div>
       </section>
 
-      
+      {/* VIDEO SECTION */}
+      <section className="py-24 bg-gradient-to-b from-white to-green-50">
+        <div className="max-w-6xl mx-auto px-6">
+          <motion.div
+            initial={{ opacity: 0, y: 24 }}
+            whileInView={{ opacity: 1, y: 0 }}
+            transition={{ duration: 0.6 }}
+            viewport={{ once: true, amount: 0.2 }}
+            className="text-center mb-14"
+          >
+            <h2 className="text-4xl md:text-5xl font-bold text-green-900 mb-4">
+              Our Work in Action
+            </h2>
+            <p className="text-gray-600 max-w-2xl mx-auto">
+              Watch our professional tree care team in action with these project videos.
+            </p>
+          </motion.div>
+
+          <div className="grid md:grid-cols-2 lg:grid-cols-3 gap-8">
+            {videos.map((video, index) => (
+              <motion.div
+                key={video.id}
+                initial={{ opacity: 0, y: 24 }}
+                whileInView={{ opacity: 1, y: 0 }}
+                transition={{ duration: 0.55, delay: index * 0.1 }}
+                viewport={{ once: true, amount: 0.2 }}
+                whileHover={{ y: -8 }}
+                className="bg-white rounded-2xl shadow-lg hover:shadow-xl transition duration-300 overflow-hidden border border-emerald-100"
+              >
+                <div className="relative aspect-video bg-gray-900">
+                  <video
+                    controls
+                    preload="metadata"
+                    className="w-full h-full object-cover"
+                  >
+                    <source src={video.src} type="video/mp4" />
+                    Your browser does not support the video tag.
+                  </video>
+                </div>
+                <div className="p-6">
+                  <h3 className="text-xl font-semibold text-green-900 mb-2">
+                    {video.title}
+                  </h3>
+                  <p className="text-sm text-gray-600 leading-relaxed">
+                    {video.description}
+                  </p>
+                </div>
+              </motion.div>
+            ))}
+          </div>
+        </div>
+      </section>
 
       {/* PROJECT SPOTLIGHT */}
       <section className="py-24 bg-white">
