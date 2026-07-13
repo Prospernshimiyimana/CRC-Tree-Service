@@ -93,6 +93,13 @@ const serviceAreas = [
   "Okemos",
   "Holt",
   "Haslett",
+  "Mason",
+  "DeWitt",
+  "Grand Ledge",
+  "Williamston",
+  "Delta Township",
+  "Waverly",
+  "Meridian Township",
 ];
 
 export default function AboutPage() {
@@ -292,7 +299,7 @@ export default function AboutPage() {
             <p className="text-gray-600 max-w-2xl mx-auto">
               CRC Tree Service proudly provides professional tree removal, tree
               trimming, stump grinding, and emergency tree services throughout
-              Michigan and nearby communities.
+              Lansing and surrounding Michigan communities.
             </p>
           </motion.div>
 
