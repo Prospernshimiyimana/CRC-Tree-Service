@@ -260,7 +260,7 @@ export default function GalleryPage() {
             className="absolute inset-0"
           >
             <Image
-              src="/images/gallery%20tree%20copy.jpg"
+              src="/images/tree emergency 3 copy.jpg"
               alt="Professional tree service projects"
               fill
               sizes="100vw"
