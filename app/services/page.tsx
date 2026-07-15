@@ -15,7 +15,6 @@ import {
 } from "lucide-react";
 import { useState } from "react";
 import Navbar from "@/components/navbar";
-import Footer from "@/components/footer";
 
 const services = [
   {
@@ -576,7 +575,7 @@ export default function ServicesPage() {
         </div>
       </section>
 
-      <Footer />
+      
     </>
   );
 }

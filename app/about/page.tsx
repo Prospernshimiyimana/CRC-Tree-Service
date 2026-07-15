@@ -19,7 +19,6 @@ import {
   ExternalLink,
 } from "lucide-react";
 import Navbar from "@/components/navbar";
-import Footer from "@/components/footer";
 import Testimonials from "@/components/testimonials";
 
 const stats = [
@@ -553,7 +552,7 @@ export default function AboutPage() {
 
       <Testimonials />
 
-      <Footer />
+      
     </>
   );
 }

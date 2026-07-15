@@ -16,7 +16,7 @@ import {
 } from "lucide-react";
 import { useState } from "react";
 import Navbar from "@/components/navbar";
-import Footer from "@/components/footer";
+
 
 const projectStats = [
   { number: "50+", label: "Projects Completed" },
@@ -706,7 +706,7 @@ export default function GalleryPage() {
         </div>
       </section>
 
-      <Footer />
+      
     </>
   );
 }

@@ -15,7 +15,7 @@ import {
 } from "lucide-react";
 import { useState } from "react";
 import Navbar from "@/components/navbar";
-import Footer from "@/components/footer";
+
 
 const contactInfo = [
   {
@@ -701,7 +701,7 @@ export default function ContactPage() {
         </div>
       </section>
 
-      <Footer />
+      
     </>
   );
 }
