@@ -117,8 +117,8 @@ export default function About() {
   }, [selectedIndex, visibleProjects.length]);
 
   return (
-    <section className="bg-[radial-gradient(circle_at_top_left,_rgba(16,185,129,0.08),_transparent_45%),linear-gradient(135deg,_#f8fcf8_0%,_#f3f7f2_100%)] py-20 sm:py-24 lg:py-28">
-      <div className="mx-auto max-w-7xl px-6 sm:px-8 lg:px-10">
+    <section className="bg-[radial-gradient(circle_at_top_left,_rgba(16,185,129,0.08),_transparent_45%),linear-gradient(135deg,_#f8fcf8_0%,_#f3f7f2_100%)] py-16 sm:py-20 lg:py-28">
+      <div className="mx-auto max-w-7xl px-4 sm:px-6 lg:px-8">
         <motion.div
           initial={{ opacity: 0, y: 24 }}
           whileInView={{ opacity: 1, y: 0 }}
@@ -126,16 +126,16 @@ export default function About() {
           viewport={{ once: true, amount: 0.2 }}
           className="mx-auto max-w-3xl text-center"
         >
-          <div className="inline-flex items-center gap-2 rounded-full border border-emerald-200 bg-white/80 px-4 py-2 text-sm font-semibold uppercase tracking-[0.25em] text-emerald-700 shadow-sm">
-            <Leaf size={16} />
+          <div className="inline-flex items-center gap-2 rounded-full border border-emerald-200 bg-white/80 px-3 sm:px-4 py-1.5 sm:py-2 text-xs sm:text-sm font-semibold uppercase tracking-[0.2em] sm:tracking-[0.25em] text-emerald-700 shadow-sm">
+            <Leaf size={14} className="w-3.5 h-3.5 sm:w-4 sm:h-4" />
             Our Portfolio
           </div>
 
-          <h2 className="mt-6 text-3xl font-semibold tracking-tight text-emerald-950 sm:text-4xl lg:text-5xl">
+          <h2 className="mt-4 sm:mt-6 text-2xl sm:text-3xl lg:text-4xl xl:text-5xl font-semibold tracking-tight text-emerald-950">
             See the Quality of Our Tree Care Work
           </h2>
 
-          <p className="mx-auto mt-5 max-w-2xl text-base leading-8 text-emerald-800/80 sm:text-lg">
+          <p className="mx-auto mt-3 sm:mt-5 max-w-2xl text-sm sm:text-base leading-6 sm:leading-8 text-emerald-800/80">
             Explore some of our recent tree removal, trimming, stump grinding, and emergency service projects completed across Michigan.
           </p>
         </motion.div>
@@ -145,7 +145,7 @@ export default function About() {
           whileInView={{ opacity: 1, y: 0 }}
           transition={{ duration: 0.6, delay: 0.1 }}
           viewport={{ once: true, amount: 0.2 }}
-          className="mt-10 flex flex-wrap justify-center gap-3"
+          className="mt-8 sm:mt-10 flex flex-wrap justify-center gap-2 sm:gap-3"
         >
           {categories.map((category) => {
             const isActive = category === activeCategory;
@@ -159,7 +159,7 @@ export default function About() {
                   setActiveCategory(category);
                   setSelectedIndex(null);
                 }}
-                className={`rounded-full px-4 py-2 text-sm font-semibold transition-all duration-300 ${
+                className={`rounded-full px-3 sm:px-4 py-1.5 sm:py-2 text-xs sm:text-sm font-semibold transition-all duration-300 ${
                   isActive
                     ? "bg-emerald-700 text-white shadow-lg shadow-emerald-700/20"
                     : "bg-white text-emerald-800 shadow-sm hover:bg-emerald-50"
@@ -171,7 +171,7 @@ export default function About() {
           })}
         </motion.div>
 
-        <div className="mt-12 columns-1 gap-6 sm:columns-2 xl:columns-4">
+        <div className="mt-8 sm:mt-12 columns-1 gap-4 sm:gap-6 sm:columns-2 xl:columns-4">
           {visibleProjects.map((project, index) => (
             <motion.article
               key={project.title + index}
@@ -180,7 +180,7 @@ export default function About() {
               transition={{ duration: 0.5, delay: index * 0.06 }}
               viewport={{ once: true, amount: 0.1 }}
               whileHover={{ y: -6, scale: 1.01, boxShadow: "0 24px 50px -18px rgba(3, 46, 27, 0.22)" }}
-              className="group mb-6 break-inside-avoid overflow-hidden rounded-[24px] border border-emerald-100/80 bg-white shadow-[0_16px_40px_-20px_rgba(3,46,27,0.25)]"
+              className="group mb-4 sm:mb-6 break-inside-avoid overflow-hidden rounded-[20px] sm:rounded-[24px] border border-emerald-100/80 bg-white shadow-[0_16px_40px_-20px_rgba(3,46,27,0.25)]"
             >
               <button
                 type="button"
@@ -193,30 +193,30 @@ export default function About() {
                     alt={project.title}
                     width={900}
                     height={700}
-                    className="h-72 w-full object-cover transition duration-500 group-hover:scale-110"
+                    className="h-56 sm:h-72 w-full object-cover transition duration-500 group-hover:scale-110"
                     loading="lazy"
                   />
                   <div className="absolute inset-0 bg-gradient-to-t from-black/70 via-black/15 to-transparent opacity-0 transition duration-300 group-hover:opacity-100" />
-                  <div className="absolute inset-x-0 bottom-0 translate-y-3 p-5 text-white opacity-0 transition duration-300 group-hover:translate-y-0 group-hover:opacity-100">
+                  <div className="absolute inset-x-0 bottom-0 translate-y-3 p-4 sm:p-5 text-white opacity-0 transition duration-300 group-hover:translate-y-0 group-hover:opacity-100">
                     <p className="text-xs font-semibold uppercase tracking-[0.3em] text-emerald-200">
                       {project.category}
                     </p>
-                    <h3 className="mt-2 text-xl font-semibold">{project.title}</h3>
-                    <div className="mt-3 inline-flex items-center gap-2 text-sm font-semibold text-white">
-                      View Project <ArrowRight size={16} />
+                    <h3 className="mt-1 sm:mt-2 text-base sm:text-xl font-semibold">{project.title}</h3>
+                    <div className="mt-2 sm:mt-3 inline-flex items-center gap-2 text-xs sm:text-sm font-semibold text-white">
+                      View Project <ArrowRight size={14} className="w-3.5 h-3.5 sm:w-4 sm:h-4" />
                     </div>
                   </div>
                 </div>
               </button>
 
-              <div className="p-5">
+              <div className="p-4 sm:p-5">
                 <p className="text-xs font-semibold uppercase tracking-[0.3em] text-emerald-700">
                   {project.category}
                 </p>
-                <h3 className="mt-2 text-lg font-semibold text-emerald-950">
+                <h3 className="mt-2 text-base sm:text-lg font-semibold text-emerald-950">
                   {project.title}
                 </h3>
-                <p className="mt-2 text-sm leading-7 text-emerald-800/80">
+                <p className="mt-2 text-xs sm:text-sm leading-7 text-emerald-800/80">
                   {project.description}
                 </p>
               </div>
@@ -229,17 +229,17 @@ export default function About() {
           whileInView={{ opacity: 1, y: 0 }}
           transition={{ duration: 0.6, delay: 0.12 }}
           viewport={{ once: true, amount: 0.2 }}
-          className="mt-16 rounded-[32px] border border-emerald-100 bg-white/80 px-8 py-10 text-center shadow-[0_18px_60px_-24px_rgba(3,46,27,0.25)] sm:px-10"
+          className="mt-12 sm:mt-16 rounded-[24px] sm:rounded-[32px] border border-emerald-100 bg-white/80 px-6 sm:px-8 lg:px-10 py-8 sm:py-10 text-center shadow-[0_18px_60px_-24px_rgba(3,46,27,0.25)]"
         >
-          <h3 className="text-2xl font-semibold text-emerald-950 sm:text-3xl">
+          <h3 className="text-xl sm:text-2xl lg:text-3xl font-semibold text-emerald-950">
             Ready to Transform Your Property?
           </h3>
-          <p className="mx-auto mt-4 max-w-2xl text-base leading-8 text-emerald-800/80">
+          <p className="mx-auto mt-3 sm:mt-4 max-w-2xl text-sm sm:text-base leading-6 sm:leading-8 text-emerald-800/80">
             Get a free estimate from CRC Tree Service today.
           </p>
           <Link
             href="/contact#estimate-form"
-            className="mt-8 inline-flex items-center justify-center rounded-full bg-orange-500 px-7 py-3 text-sm font-semibold uppercase tracking-[0.2em] text-white shadow-lg shadow-orange-500/20 transition hover:-translate-y-0.5 hover:bg-orange-400"
+            className="mt-6 sm:mt-8 inline-flex items-center justify-center rounded-full bg-orange-500 px-5 sm:px-7 py-2.5 sm:py-3 text-xs sm:text-sm font-semibold uppercase tracking-[0.15em] sm:tracking-[0.2em] text-white shadow-lg shadow-orange-500/20 transition hover:-translate-y-0.5 hover:bg-orange-400"
             aria-label="Get a free estimate"
           >
             Get Free Estimate
@@ -253,22 +253,22 @@ export default function About() {
             initial={{ opacity: 0 }}
             animate={{ opacity: 1 }}
             exit={{ opacity: 0 }}
-            className="fixed inset-0 z-[60] flex items-center justify-center bg-black/80 px-4 py-6 backdrop-blur-sm"
+            className="fixed inset-0 z-[60] flex items-center justify-center bg-black/80 px-3 sm:px-4 py-4 sm:py-6 backdrop-blur-sm"
           >
             <motion.div
               initial={{ opacity: 0, scale: 0.96, y: 16 }}
               animate={{ opacity: 1, scale: 1, y: 0 }}
               exit={{ opacity: 0, scale: 0.96, y: 16 }}
               transition={{ duration: 0.25 }}
-              className="relative w-full max-w-5xl overflow-hidden rounded-[28px] bg-white shadow-2xl"
+              className="relative w-full max-w-5xl overflow-hidden rounded-[20px] sm:rounded-[28px] bg-white shadow-2xl"
             >
               <button
                 type="button"
                 onClick={() => setSelectedIndex(null)}
-                className="absolute right-4 top-4 z-10 rounded-full bg-white/90 p-2 text-emerald-900 shadow-lg"
+                className="absolute right-3 sm:right-4 top-3 sm:top-4 z-10 rounded-full bg-white/90 p-1.5 sm:p-2 text-emerald-900 shadow-lg"
                 aria-label="Close project preview"
               >
-                <X size={18} />
+                <X size={16} className="w-4 h-4 sm:w-4.5 sm:h-4.5" />
               </button>
 
               <div className="relative aspect-[4/3] w-full bg-emerald-950">
@@ -280,20 +280,20 @@ export default function About() {
                   priority
                 />
                 <div className="absolute inset-0 bg-gradient-to-t from-black/70 via-black/20 to-transparent" />
-                <div className="absolute bottom-0 left-0 right-0 p-6 text-white sm:p-8">
+                <div className="absolute bottom-0 left-0 right-0 p-4 sm:p-6 lg:p-8 text-white">
                   <p className="text-xs font-semibold uppercase tracking-[0.32em] text-emerald-200">
                     {selectedProject.category}
                   </p>
-                  <h3 className="mt-2 text-2xl font-semibold sm:text-3xl">
+                  <h3 className="mt-2 text-xl sm:text-2xl lg:text-3xl font-semibold">
                     {selectedProject.title}
                   </h3>
-                  <p className="mt-3 max-w-2xl text-sm leading-7 text-emerald-50/90 sm:text-base">
+                  <p className="mt-3 max-w-2xl text-xs sm:text-sm leading-6 sm:leading-7 text-emerald-50/90">
                     {selectedProject.description}
                   </p>
                 </div>
               </div>
 
-              <div className="flex items-center justify-between border-t border-emerald-100 bg-white px-4 py-4 sm:px-6">
+              <div className="flex items-center justify-between border-t border-emerald-100 bg-white px-3 sm:px-4 lg:px-6 py-3 sm:py-4">
                 <button
                   type="button"
                   onClick={() =>
@@ -303,9 +303,9 @@ export default function About() {
                         : current - 1
                     )
                   }
-                  className="inline-flex items-center gap-2 rounded-full border border-emerald-200 px-4 py-2 text-sm font-semibold text-emerald-800 transition hover:bg-emerald-50"
+                  className="inline-flex items-center gap-2 rounded-full border border-emerald-200 px-3 sm:px-4 py-2 text-xs sm:text-sm font-semibold text-emerald-800 transition hover:bg-emerald-50"
                 >
-                  <ChevronLeft size={16} />
+                  <ChevronLeft size={14} className="w-3.5 h-3.5 sm:w-4 sm:h-4" />
                   Previous
                 </button>
 
@@ -316,10 +316,10 @@ export default function About() {
                       current === null ? 0 : (current + 1) % visibleProjects.length
                     )
                   }
-                  className="inline-flex items-center gap-2 rounded-full border border-emerald-200 px-4 py-2 text-sm font-semibold text-emerald-800 transition hover:bg-emerald-50"
+                  className="inline-flex items-center gap-2 rounded-full border border-emerald-200 px-3 sm:px-4 py-2 text-xs sm:text-sm font-semibold text-emerald-800 transition hover:bg-emerald-50"
                 >
                   Next
-                  <ChevronRight size={16} />
+                  <ChevronRight size={14} className="w-3.5 h-3.5 sm:w-4 sm:h-4" />
                 </button>
               </div>
             </motion.div>

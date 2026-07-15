@@ -23,7 +23,7 @@ export default function Hero() {
   }, []);
 
   return (
-    <section className="relative min-h-screen overflow-hidden bg-[#042109] text-white">
+    <section className="relative min-h-[85vh] sm:min-h-screen overflow-hidden bg-[#042109] text-white">
       <div className="absolute inset-0">
         <AnimatePresence initial={false}>
           {slides.map((slide, index) =>
@@ -51,13 +51,13 @@ export default function Hero() {
         </AnimatePresence>
       </div>
 
-      <div className="relative z-10 flex min-h-screen items-center justify-center px-6 py-24">
-        <div className="mx-auto w-full max-w-5xl text-center">
+      <div className="relative z-10 flex min-h-[85vh] sm:min-h-screen items-center justify-center px-4 sm:px-6 py-20 sm:py-24">
+        <div className="mx-auto w-full max-w-5xl text-center px-4">
           <motion.div
             initial={{ opacity: 0, y: 24 }}
             animate={{ opacity: 1, y: 0 }}
             transition={{ duration: 0.7, ease: "easeOut" }}
-            className="inline-flex rounded-full border border-emerald-200/20 bg-emerald-900/40 px-4 py-2 text-sm uppercase tracking-[0.32em] text-emerald-100/90"
+            className="inline-flex rounded-full border border-emerald-200/20 bg-emerald-900/40 px-3 sm:px-4 py-1.5 sm:py-2 text-xs sm:text-sm uppercase tracking-[0.2em] sm:tracking-[0.32em] text-emerald-100/90"
           >
             CRC Tree Service
           </motion.div>
@@ -66,7 +66,7 @@ export default function Hero() {
             initial={{ opacity: 0, y: 24 }}
             animate={{ opacity: 1, y: 0 }}
             transition={{ duration: 0.8, delay: 0.08, ease: "easeOut" }}
-            className="mt-8 text-4xl font-semibold tracking-tight text-white sm:text-5xl md:text-6xl lg:text-7xl"
+            className="mt-6 sm:mt-8 text-3xl sm:text-4xl md:text-5xl lg:text-6xl xl:text-7xl font-semibold tracking-tight text-white"
           >
             Professional Tree Care
           </motion.h1>
@@ -75,7 +75,7 @@ export default function Hero() {
             initial={{ opacity: 0, y: 24 }}
             animate={{ opacity: 1, y: 0 }}
             transition={{ duration: 0.8, delay: 0.16, ease: "easeOut" }}
-            className="mx-auto mt-6 max-w-2xl text-base leading-8 text-emerald-100 sm:text-lg md:text-xl"
+            className="mx-auto mt-4 sm:mt-6 max-w-2xl text-sm sm:text-base md:text-lg lg:text-xl leading-6 sm:leading-8 text-emerald-100"
           >
             Proudly serving Michigan and surrounding communities with safe, reliable, and affordable tree removal, trimming, and emergency services.
           </motion.p>
@@ -84,11 +84,11 @@ export default function Hero() {
             initial={{ opacity: 0, y: 24 }}
             animate={{ opacity: 1, y: 0 }}
             transition={{ duration: 0.8, delay: 0.24, ease: "easeOut" }}
-            className="mt-10 flex flex-col items-center justify-center gap-4 sm:flex-row"
+            className="mt-8 sm:mt-10 flex flex-col items-center justify-center gap-3 sm:gap-4 sm:flex-row"
           >
             <Link
               href="/contact#estimate-form"
-              className="inline-flex min-w-[220px] items-center justify-center rounded-full bg-orange-500 px-8 py-4 text-sm font-semibold uppercase tracking-[0.14em] text-slate-950 shadow-xl shadow-orange-500/20 transition hover:-translate-y-0.5 hover:bg-orange-400"
+              className="inline-flex w-full sm:w-auto min-w-[180px] sm:min-w-[220px] items-center justify-center rounded-full bg-orange-500 px-6 sm:px-8 py-3 sm:py-4 text-xs sm:text-sm font-semibold uppercase tracking-[0.1em] sm:tracking-[0.14em] text-slate-950 shadow-xl shadow-orange-500/20 transition hover:-translate-y-0.5 hover:bg-orange-400"
               aria-label="Get a free estimate"
             >
               Get Free Estimate
@@ -96,7 +96,7 @@ export default function Hero() {
 
             <a
               href="tel:+15177157367"
-              className="inline-flex min-w-[220px] items-center justify-center rounded-full border border-emerald-200/40 bg-white/5 px-8 py-4 text-sm font-semibold uppercase tracking-[0.14em] text-white transition hover:border-emerald-100/60 hover:bg-white/10"
+              className="inline-flex w-full sm:w-auto min-w-[180px] sm:min-w-[220px] items-center justify-center rounded-full border border-emerald-200/40 bg-white/5 px-6 sm:px-8 py-3 sm:py-4 text-xs sm:text-sm font-semibold uppercase tracking-[0.1em] sm:tracking-[0.14em] text-white transition hover:border-emerald-100/60 hover:bg-white/10"
             >
               Call Now
             </a>

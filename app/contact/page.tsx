@@ -270,24 +270,24 @@ export default function ContactPage() {
       </section>
 
       {/* CONTACT INFORMATION */}
-      <section className="py-24 bg-gradient-to-b from-green-50 to-white">
-        <div className="max-w-6xl mx-auto px-6">
+      <section className="py-16 sm:py-20 md:py-24 bg-gradient-to-b from-green-50 to-white">
+        <div className="max-w-7xl mx-auto px-4 sm:px-6">
           <motion.div
             initial={{ opacity: 0, y: 24 }}
             whileInView={{ opacity: 1, y: 0 }}
             transition={{ duration: 0.6 }}
             viewport={{ once: true, amount: 0.2 }}
-            className="text-center mb-14"
+            className="text-center mb-10 sm:mb-14"
           >
-            <h2 className="text-4xl md:text-5xl font-bold text-green-900 mb-4">
+            <h2 className="text-3xl sm:text-4xl md:text-5xl font-bold text-green-900 mb-3 sm:mb-4">
               Get in Touch
             </h2>
-            <p className="text-gray-600 max-w-2xl mx-auto">
+            <p className="text-gray-600 max-w-2xl mx-auto text-sm sm:text-base">
               Contact CRC Tree Service for all your tree care needs.
             </p>
           </motion.div>
 
-          <div className="grid md:grid-cols-2 lg:grid-cols-4 gap-6">
+          <div className="grid grid-cols-1 sm:grid-cols-2 lg:grid-cols-4 gap-4 sm:gap-6">
             {contactInfo.map((info, index) => {
               const Icon = info.icon;
               return (
@@ -298,15 +298,15 @@ export default function ContactPage() {
                   transition={{ duration: 0.55, delay: index * 0.1 }}
                   viewport={{ once: true, amount: 0.2 }}
                   whileHover={{ y: -8 }}
-                  className="bg-white p-6 rounded-2xl shadow-lg hover:shadow-xl transition-all duration-300"
+                  className="bg-white p-5 sm:p-6 rounded-2xl shadow-lg hover:shadow-xl transition-all duration-300"
                 >
-                  <div className="w-14 h-14 bg-gradient-to-br from-green-500 to-green-600 rounded-xl flex items-center justify-center mb-4 shadow-lg shadow-green-500/30">
-                    <Icon size={28} className="text-white" />
+                  <div className="w-12 h-12 sm:w-14 sm:h-14 bg-gradient-to-br from-green-500 to-green-600 rounded-xl flex items-center justify-center mb-3 sm:mb-4 shadow-lg shadow-green-500/30">
+                    <Icon size={24} className="w-6 h-6 sm:w-7 sm:h-7 text-white" />
                   </div>
-                  <h3 className="text-lg font-semibold text-green-900 mb-2">
+                  <h3 className="text-base sm:text-lg font-semibold text-green-900 mb-2">
                     {info.title}
                   </h3>
-                  <p className="text-gray-600 text-sm whitespace-pre-line mb-4">
+                  <p className="text-gray-600 text-xs sm:text-sm whitespace-pre-line mb-3 sm:mb-4">
                     {info.content}
                   </p>
                  {info.link && (
@@ -314,10 +314,10 @@ export default function ContactPage() {
     href={info.link}
     target={info.external ? "_blank" : undefined}
     rel={info.external ? "noopener noreferrer" : undefined}
-    className="inline-flex items-center gap-2 text-green-600 font-semibold text-sm hover:text-green-700 transition"
+    className="inline-flex items-center gap-2 text-green-600 font-semibold text-xs sm:text-sm hover:text-green-700 transition"
   >
     {info.linkText}
-    {info.external && <ExternalLink size={14} />}
+    {info.external && <ExternalLink size={12} className="w-3 h-3 sm:w-3.5 sm:h-3.5" />}
   </a>
 )}
                 </motion.div>
@@ -328,20 +328,20 @@ export default function ContactPage() {
       </section>
 
       {/* FREE ESTIMATE FORM */}
-      <section id="estimate-form" className="scroll-mt-24 py-24 bg-white">
-        <div className="max-w-4xl mx-auto px-6">
+      <section id="estimate-form" className="scroll-mt-20 sm:scroll-mt-24 py-16 sm:py-20 md:py-24 bg-white">
+        <div className="max-w-4xl mx-auto px-4 sm:px-6">
           <motion.div
             initial={{ opacity: 0, y: 24 }}
             whileInView={{ opacity: 1, y: 0 }}
             transition={{ duration: 0.6 }}
             viewport={{ once: true, amount: 0.2 }}
-            className="text-center mb-14"
+            className="text-center mb-10 sm:mb-14"
           >
-            <h2 className="text-4xl md:text-5xl font-bold text-green-900 mb-4">
+            <h2 className="text-3xl sm:text-4xl md:text-5xl font-bold text-green-900 mb-3 sm:mb-4">
               Request Your Free Estimate
             </h2>
-            <p className="text-gray-600 max-w-2xl mx-auto">
-              Fill out the form below and we'll get back to you within 24 hours.
+            <p className="text-gray-600 max-w-2xl mx-auto text-sm sm:text-base">
+              Fill out the form below and we&apos;ll get back to you within 24 hours.
             </p>
           </motion.div>
 
@@ -351,24 +351,24 @@ export default function ContactPage() {
             transition={{ duration: 0.6, delay: 0.1 }}
             viewport={{ once: true, amount: 0.2 }}
             whileHover={{ scale: 1.01 }}
-            className="bg-gradient-to-br from-green-50 to-emerald-50 p-8 md:p-12 rounded-3xl shadow-xl border border-green-200"
+            className="bg-gradient-to-br from-green-50 to-emerald-50 p-6 sm:p-8 md:p-12 rounded-2xl sm:rounded-3xl shadow-xl border border-green-200"
           >
             {submitSuccess ? (
-              <div className="text-center py-12">
-                <div className="w-20 h-20 bg-green-500 rounded-full flex items-center justify-center mx-auto mb-6">
-                  <Check size={40} className="text-white" />
+              <div className="text-center py-8 sm:py-12">
+                <div className="w-16 h-16 sm:w-20 sm:h-20 bg-green-500 rounded-full flex items-center justify-center mx-auto mb-4 sm:mb-6">
+                  <Check size={32} className="w-8 h-8 sm:w-10 sm:h-10 text-white" />
                 </div>
-                <h3 className="text-2xl font-bold text-green-900 mb-2">
+                <h3 className="text-xl sm:text-2xl font-bold text-green-900 mb-2">
                   Request Submitted!
                 </h3>
-                <p className="text-gray-600">
-                  We'll contact you within 24 hours to discuss your tree service
+                <p className="text-gray-600 text-sm sm:text-base">
+                  We&apos;ll contact you within 24 hours to discuss your tree service
                   needs.
                 </p>
               </div>
             ) : (
-              <form onSubmit={handleSubmit} className="space-y-6">
-                <div className="grid md:grid-cols-2 gap-6">
+              <form onSubmit={handleSubmit} className="space-y-4 sm:space-y-6">
+                <div className="grid grid-cols-1 sm:grid-cols-2 gap-4 sm:gap-6">
                   <div>
                     <label
                       htmlFor="fullName"
@@ -383,7 +383,7 @@ export default function ContactPage() {
                       value={formData.fullName}
                       onChange={handleInputChange}
                       required
-                      className="w-full px-4 py-3 rounded-xl border border-green-300 focus:border-green-500 focus:ring-2 focus:ring-green-500/20 outline-none transition"
+                      className="w-full px-3 sm:px-4 py-2.5 sm:py-3 rounded-xl border border-green-300 focus:border-green-500 focus:ring-2 focus:ring-green-500/20 outline-none transition text-sm sm:text-base"
                       placeholder="John doe"
                     />
                   </div>
@@ -401,13 +401,13 @@ export default function ContactPage() {
                       value={formData.phone}
                       onChange={handleInputChange}
                       required
-                      className="w-full px-4 py-3 rounded-xl border border-green-300 focus:border-green-500 focus:ring-2 focus:ring-green-500/20 outline-none transition"
+                      className="w-full px-3 sm:px-4 py-2.5 sm:py-3 rounded-xl border border-green-300 focus:border-green-500 focus:ring-2 focus:ring-green-500/20 outline-none transition text-sm sm:text-base"
                       placeholder="(517) 715-7367"
                     />
                   </div>
                 </div>
 
-                <div className="grid md:grid-cols-2 gap-6">
+                <div className="grid grid-cols-1 sm:grid-cols-2 gap-4 sm:gap-6">
                   <div>
                     <label
                       htmlFor="email"
@@ -422,7 +422,7 @@ export default function ContactPage() {
                       value={formData.email}
                       onChange={handleInputChange}
                       required
-                      className="w-full px-4 py-3 rounded-xl border border-green-300 focus:border-green-500 focus:ring-2 focus:ring-green-500/20 outline-none transition"
+                      className="w-full px-3 sm:px-4 py-2.5 sm:py-3 rounded-xl border border-green-300 focus:border-green-500 focus:ring-2 focus:ring-green-500/20 outline-none transition text-sm sm:text-base"
                       placeholder="john.doe@example.com"
                     />
                   </div>
@@ -440,7 +440,7 @@ export default function ContactPage() {
                       value={formData.address}
                       onChange={handleInputChange}
                       required
-                      className="w-full px-4 py-3 rounded-xl border border-green-300 focus:border-green-500 focus:ring-2 focus:ring-green-500/20 outline-none transition"
+                      className="w-full px-3 sm:px-4 py-2.5 sm:py-3 rounded-xl border border-green-300 focus:border-green-500 focus:ring-2 focus:ring-green-500/20 outline-none transition text-sm sm:text-base"
                       placeholder="123 Main St, Lansing, MI"
                     />
                   </div>
@@ -459,7 +459,7 @@ export default function ContactPage() {
                     value={formData.service}
                     onChange={handleInputChange}
                     required
-                    className="w-full px-4 py-3 rounded-xl border border-green-300 focus:border-green-500 focus:ring-2 focus:ring-green-500/20 outline-none transition bg-white"
+                    className="w-full px-3 sm:px-4 py-2.5 sm:py-3 rounded-xl border border-green-300 focus:border-green-500 focus:ring-2 focus:ring-green-500/20 outline-none transition bg-white text-sm sm:text-base"
                   >
                     <option value="">Select a service</option>
                     <option value="tree-removal">Tree Removal</option>
@@ -483,7 +483,7 @@ export default function ContactPage() {
                     value={formData.message}
                     onChange={handleInputChange}
                     rows={4}
-                    className="w-full px-4 py-3 rounded-xl border border-green-300 focus:border-green-500 focus:ring-2 focus:ring-green-500/20 outline-none transition resize-none"
+                    className="w-full px-3 sm:px-4 py-2.5 sm:py-3 rounded-xl border border-green-300 focus:border-green-500 focus:ring-2 focus:ring-green-500/20 outline-none transition resize-none text-sm sm:text-base"
                     placeholder="Describe your tree service needs..."
                   />
                 </div>
@@ -492,7 +492,7 @@ export default function ContactPage() {
                   <label className="block text-sm font-semibold text-green-900 mb-3">
                     Preferred Contact Method *
                   </label>
-                  <div className="flex gap-4">
+                  <div className="flex gap-4 sm:gap-6">
                     <label className="flex items-center gap-2 cursor-pointer">
                       <input
                         type="radio"
@@ -500,9 +500,9 @@ export default function ContactPage() {
                         value="phone"
                         checked={formData.contactMethod === "phone"}
                         onChange={handleInputChange}
-                        className="w-4 h-4 text-green-600"
+                        className="w-4 h-4 sm:w-5 sm:h-5 text-green-600"
                       />
-                      <span className="text-gray-700">Phone</span>
+                      <span className="text-gray-700 text-sm sm:text-base">Phone</span>
                     </label>
                     <label className="flex items-center gap-2 cursor-pointer">
                       <input
@@ -511,9 +511,9 @@ export default function ContactPage() {
                         value="email"
                         checked={formData.contactMethod === "email"}
                         onChange={handleInputChange}
-                        className="w-4 h-4 text-green-600"
+                        className="w-4 h-4 sm:w-5 sm:h-5 text-green-600"
                       />
-                      <span className="text-gray-700">Email</span>
+                      <span className="text-gray-700 text-sm sm:text-base">Email</span>
                     </label>
                   </div>
                 </div>
@@ -526,18 +526,18 @@ export default function ContactPage() {
                     checked={formData.agreeToContact}
                     onChange={handleInputChange}
                     required
-                    className="w-5 h-5 mt-0.5 text-green-600 rounded"
+                    className="w-4 h-4 sm:w-5 sm:h-5 mt-0.5 text-green-600 rounded"
                   />
                   <label
                     htmlFor="agreeToContact"
-                    className="text-sm text-gray-600 leading-relaxed"
+                    className="text-xs sm:text-sm text-gray-600 leading-relaxed"
                   >
                     I agree to be contacted about my estimate request. *
                   </label>
                 </div>
 
                 {submitError && (
-                  <div className="bg-red-50 border border-red-200 text-red-700 px-4 py-3 rounded-xl text-sm">
+                  <div className="bg-red-50 border border-red-200 text-red-700 px-3 sm:px-4 py-2 sm:py-3 rounded-xl text-xs sm:text-sm">
                     {submitError}
                   </div>
                 )}
@@ -545,7 +545,7 @@ export default function ContactPage() {
                 <button
                   type="submit"
                   disabled={isSubmitting}
-                  className="w-full inline-flex items-center justify-center rounded-full bg-orange-500 px-8 py-4 text-sm font-semibold uppercase tracking-[0.14em] text-slate-950 shadow-xl shadow-orange-500/20 transition hover:-translate-y-0.5 hover:bg-orange-400 disabled:opacity-50 disabled:cursor-not-allowed disabled:hover:translate-y-0"
+                  className="w-full inline-flex items-center justify-center rounded-full bg-orange-500 px-6 sm:px-8 py-3 sm:py-4 text-xs sm:text-sm font-semibold uppercase tracking-[0.12em] sm:tracking-[0.14em] text-slate-950 shadow-xl shadow-orange-500/20 transition hover:-translate-y-0.5 hover:bg-orange-400 disabled:opacity-50 disabled:cursor-not-allowed disabled:hover:translate-y-0"
                 >
                   {isSubmitting ? "Submitting..." : "Submit Request"}
                 </button>
@@ -556,24 +556,24 @@ export default function ContactPage() {
       </section>
 
       {/* WHY CONTACT US */}
-      <section className="py-24 bg-gradient-to-b from-green-50 to-white">
-        <div className="max-w-6xl mx-auto px-6">
+      <section className="py-16 sm:py-20 md:py-24 bg-gradient-to-b from-green-50 to-white">
+        <div className="max-w-7xl mx-auto px-4 sm:px-6">
           <motion.div
             initial={{ opacity: 0, y: 24 }}
             whileInView={{ opacity: 1, y: 0 }}
             transition={{ duration: 0.6 }}
             viewport={{ once: true, amount: 0.2 }}
-            className="text-center mb-14"
+            className="text-center mb-10 sm:mb-14"
           >
-            <h2 className="text-4xl md:text-5xl font-bold text-green-900 mb-4">
+            <h2 className="text-3xl sm:text-4xl md:text-5xl font-bold text-green-900 mb-3 sm:mb-4">
               Why Choose CRC Tree Service
             </h2>
-            <p className="text-gray-600 max-w-2xl mx-auto">
+            <p className="text-gray-600 max-w-2xl mx-auto text-sm sm:text-base">
               Professional tree care you can trust.
             </p>
           </motion.div>
 
-          <div className="grid md:grid-cols-2 lg:grid-cols-3 gap-6">
+          <div className="grid grid-cols-1 sm:grid-cols-2 lg:grid-cols-3 gap-4 sm:gap-6">
             {whyContactUs.map((item, index) => (
               <motion.div
                 key={item}
@@ -582,12 +582,12 @@ export default function ContactPage() {
                 transition={{ duration: 0.55, delay: index * 0.05 }}
                 viewport={{ once: true, amount: 0.2 }}
                 whileHover={{ y: -4 }}
-                className="bg-white p-6 rounded-2xl shadow-md hover:shadow-lg transition duration-300 flex items-center gap-4 border border-green-100"
+                className="bg-white p-4 sm:p-6 rounded-2xl shadow-md hover:shadow-lg transition duration-300 flex items-center gap-3 sm:gap-4 border border-green-100"
               >
-                <div className="flex-shrink-0 w-10 h-10 bg-gradient-to-br from-green-500 to-green-600 rounded-full flex items-center justify-center shadow-lg shadow-green-500/30">
-                  <Check className="w-5 h-5 text-white" />
+                <div className="flex-shrink-0 w-8 h-8 sm:w-10 sm:h-10 bg-gradient-to-br from-green-500 to-green-600 rounded-full flex items-center justify-center shadow-lg shadow-green-500/30">
+                  <Check className="w-4 h-4 sm:w-5 sm:h-5 text-white" />
                 </div>
-                <span className="font-semibold text-green-900">{item}</span>
+                <span className="font-semibold text-green-900 text-sm sm:text-base">{item}</span>
               </motion.div>
             ))}
           </div>
