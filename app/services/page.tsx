@@ -298,7 +298,7 @@ export default function ServicesPage() {
                       href={`/services#${service.id}`}
                       className="text-orange-500 font-medium flex items-center gap-1 group-hover:gap-2 transition-all"
                     >
-                      Learn More <ArrowRight size={16} />
+                      Read More <ArrowRight size={16} />
                     </Link>
                   </div>
                 ) : (
@@ -306,7 +306,7 @@ export default function ServicesPage() {
                     href={`/services#${service.id}`}
                     className="mt-4 text-orange-500 font-medium flex items-center gap-1 group-hover:gap-2 transition-all"
                   >
-                    Learn More <ArrowRight size={16} />
+                    Read More <ArrowRight size={16} />
                   </Link>
                 )}
               </motion.div>

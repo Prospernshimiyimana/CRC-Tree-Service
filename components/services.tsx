@@ -28,7 +28,7 @@ export default function Services() {
               Safe removal of hazardous or unwanted trees using professional equipment.
             </p>
             <Link href="/services#tree-removal" className="mt-4 text-orange-500 font-medium">
-              Learn More →
+              Read More →
             </Link>
           </div>
 
@@ -40,7 +40,7 @@ export default function Services() {
               Improve tree health, shape, and safety with expert trimming services.
             </p>
             <Link href="/services#tree-trimming" className="mt-4 text-orange-500 font-medium">
-              Learn More →
+              Read More →
             </Link>
           </div>
 
@@ -52,7 +52,7 @@ export default function Services() {
               Complete stump removal to keep your landscape clean and usable.
             </p>
             <Link href="/services#stump-grinding" className="mt-4 text-orange-500 font-medium">
-              Learn More →
+              Read More →
             </Link>
           </div>
 
@@ -75,7 +75,7 @@ export default function Services() {
                 href="/services#emergency-service" 
                 className="text-orange-500 font-medium hover:text-orange-600 transition"
               >
-                Learn More →
+                Read More →
               </Link>
             </div>
           </div>
