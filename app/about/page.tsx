@@ -232,7 +232,7 @@ export default function AboutPage() {
                 href="/services"
                 className="inline-flex items-center gap-2 bg-orange-500 text-white px-6 py-3 rounded-full font-semibold hover:bg-orange-600 transition shadow-lg shadow-orange-500/20"
               >
-                Learn More About Our Services <ArrowRight size={18} />
+                Read More <ArrowRight size={18} />
               </Link>
             </motion.div>
           </div>
