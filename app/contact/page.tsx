@@ -189,524 +189,1774 @@ export default function ContactPage() {
       <Navbar />
 
       {/* HERO SECTION */}
-      <section className="relative min-h-screen overflow-hidden bg-[#042109]">
-        <div className="absolute inset-0">
-          <motion.div
-            initial={{ scale: 1.04, opacity: 0.9 }}
-            animate={{ scale: 1.08, opacity: 1 }}
-            transition={{
-              duration: 18,
-              repeat: Infinity,
-              repeatType: "mirror",
-              ease: "easeInOut",
-            }}
-            className="absolute inset-0"
-          >
-            <Image
-              src="/images/tree emergency 4 copy.jpg"
-              alt="Professional tree service"
-              fill
-              sizes="100vw"
-              className="object-cover"
-              priority
-            />
-          </motion.div>
-          <div className="absolute inset-0 bg-gradient-to-b from-emerald-950/85 via-emerald-950/75 to-emerald-950/90" />
-        </div>
+<section className="relative min-h-screen overflow-hidden bg-[#042109]">
 
-        <div className="relative z-10 flex min-h-screen items-center justify-center px-6 py-24">
-          <div className="mx-auto max-w-5xl text-center">
-            <motion.div
-              initial={{ opacity: 0, y: 24 }}
-              animate={{ opacity: 1, y: 0 }}
-              transition={{ duration: 0.7, ease: "easeOut" }}
-              className="inline-flex rounded-full border border-emerald-200/20 bg-emerald-900/40 px-4 py-2 text-sm uppercase tracking-[0.32em] text-emerald-100/90"
-            >
-              Contact CRC Tree Service
-            </motion.div>
-
-            <motion.h1
-              initial={{ opacity: 0, y: 24 }}
-              animate={{ opacity: 1, y: 0 }}
-              transition={{ duration: 0.8, delay: 0.08, ease: "easeOut" }}
-              className="mt-8 text-4xl font-semibold tracking-tight text-white sm:text-5xl md:text-6xl lg:text-7xl"
-            >
-              Get Your Free Tree Service Estimate Today
-            </motion.h1>
-
-            <motion.p
-              initial={{ opacity: 0, y: 24 }}
-              animate={{ opacity: 1, y: 0 }}
-              transition={{ duration: 0.8, delay: 0.16, ease: "easeOut" }}
-              className="mx-auto mt-6 max-w-2xl text-base leading-8 text-emerald-100 sm:text-lg md:text-xl"
-            >
-              Need tree removal, trimming, stump grinding, or emergency tree
-              service? Our experienced team is ready to help.
-            </motion.p>
-
-            <motion.div
-              initial={{ opacity: 0, y: 24 }}
-              animate={{ opacity: 1, y: 0 }}
-              transition={{ duration: 0.8, delay: 0.24, ease: "easeOut" }}
-              className="mt-10 flex flex-col items-center justify-center gap-4 sm:flex-row"
-            >
-              <Link
-                href="#estimate-form"
-                className="inline-flex min-w-[220px] items-center justify-center rounded-full bg-orange-500 px-8 py-4 text-sm font-semibold uppercase tracking-[0.14em] text-slate-950 shadow-xl shadow-orange-500/20 transition hover:-translate-y-0.5 hover:bg-orange-400"
-              >
-                Request Free Estimate
-              </Link>
-
-              <a
-                href="tel:+15177157367"
-                className="inline-flex min-w-[220px] items-center justify-center rounded-full border border-emerald-200/40 bg-white/5 px-8 py-4 text-sm font-semibold uppercase tracking-[0.14em] text-white transition hover:border-emerald-100/60 hover:bg-white/10"
-              >
-                <Phone className="w-4 h-4 mr-2" />
-                Call Now
-              </a>
-            </motion.div>
-          </div>
-        </div>
-      </section>
-
-      {/* CONTACT INFORMATION */}
-      <section className="py-16 sm:py-20 md:py-24 bg-gradient-to-b from-green-50 to-white">
-        <div className="max-w-7xl mx-auto px-4 sm:px-6">
-          <motion.div
-            initial={{ opacity: 0, y: 24 }}
-            whileInView={{ opacity: 1, y: 0 }}
-            transition={{ duration: 0.6 }}
-            viewport={{ once: true, amount: 0.2 }}
-            className="text-center mb-10 sm:mb-14"
-          >
-            <h2 className="text-3xl sm:text-4xl md:text-5xl font-bold text-green-900 mb-3 sm:mb-4">
-              Get in Touch
-            </h2>
-            <p className="text-gray-600 max-w-2xl mx-auto text-sm sm:text-base">
-              Contact CRC Tree Service for all your tree care needs.
-            </p>
-          </motion.div>
-
-          <div className="grid grid-cols-1 sm:grid-cols-2 lg:grid-cols-4 gap-4 sm:gap-6">
-            {contactInfo.map((info, index) => {
-              const Icon = info.icon;
-              return (
-                <motion.div
-                  key={info.title}
-                  initial={{ opacity: 0, y: 24 }}
-                  whileInView={{ opacity: 1, y: 0 }}
-                  transition={{ duration: 0.55, delay: index * 0.1 }}
-                  viewport={{ once: true, amount: 0.2 }}
-                  whileHover={{ y: -8 }}
-                  className="bg-white p-5 sm:p-6 rounded-2xl shadow-lg hover:shadow-xl transition-all duration-300"
-                >
-                  <div className="w-12 h-12 sm:w-14 sm:h-14 bg-gradient-to-br from-green-500 to-green-600 rounded-xl flex items-center justify-center mb-3 sm:mb-4 shadow-lg shadow-green-500/30">
-                    <Icon size={24} className="w-6 h-6 sm:w-7 sm:h-7 text-white" />
-                  </div>
-                  <h3 className="text-base sm:text-lg font-semibold text-green-900 mb-2">
-                    {info.title}
-                  </h3>
-                  <p className="text-gray-600 text-xs sm:text-sm whitespace-pre-line mb-3 sm:mb-4">
-                    {info.content}
-                  </p>
-                 {info.link && (
-  <a
-    href={info.link}
-    target={info.external ? "_blank" : undefined}
-    rel={info.external ? "noopener noreferrer" : undefined}
-    className="inline-flex items-center gap-2 text-green-600 font-semibold text-xs sm:text-sm hover:text-green-700 transition"
-  >
-    {info.linkText}
-    {info.external && <ExternalLink size={12} className="w-3 h-3 sm:w-3.5 sm:h-3.5" />}
-  </a>
-)}
-                </motion.div>
-              );
-            })}
-          </div>
-        </div>
-      </section>
-
-      {/* FREE ESTIMATE FORM */}
-      <section id="estimate-form" className="scroll-mt-20 sm:scroll-mt-24 py-16 sm:py-20 md:py-24 bg-white">
-        <div className="max-w-4xl mx-auto px-4 sm:px-6">
-          <motion.div
-            initial={{ opacity: 0, y: 24 }}
-            whileInView={{ opacity: 1, y: 0 }}
-            transition={{ duration: 0.6 }}
-            viewport={{ once: true, amount: 0.2 }}
-            className="text-center mb-10 sm:mb-14"
-          >
-            <h2 className="text-3xl sm:text-4xl md:text-5xl font-bold text-green-900 mb-3 sm:mb-4">
-              Request Your Free Estimate
-            </h2>
-            <p className="text-gray-600 max-w-2xl mx-auto text-sm sm:text-base">
-              Fill out the form below and we&apos;ll get back to you within 24 hours.
-            </p>
-          </motion.div>
-
-          <motion.div
-            initial={{ opacity: 0, y: 24, scale: 0.98 }}
-            whileInView={{ opacity: 1, y: 0, scale: 1 }}
-            transition={{ duration: 0.6, delay: 0.1 }}
-            viewport={{ once: true, amount: 0.2 }}
-            whileHover={{ scale: 1.01 }}
-            className="bg-gradient-to-br from-green-50 to-emerald-50 p-6 sm:p-8 md:p-12 rounded-2xl sm:rounded-3xl shadow-xl border border-green-200"
-          >
-            {submitSuccess ? (
-              <div className="text-center py-8 sm:py-12">
-                <div className="w-16 h-16 sm:w-20 sm:h-20 bg-green-500 rounded-full flex items-center justify-center mx-auto mb-4 sm:mb-6">
-                  <Check size={32} className="w-8 h-8 sm:w-10 sm:h-10 text-white" />
-                </div>
-                <h3 className="text-xl sm:text-2xl font-bold text-green-900 mb-2">
-                  Request Submitted!
-                </h3>
-                <p className="text-gray-600 text-sm sm:text-base">
-                  We&apos;ll contact you within 24 hours to discuss your tree service
-                  needs.
-                </p>
-              </div>
-            ) : (
-              <form onSubmit={handleSubmit} className="space-y-4 sm:space-y-6">
-                <div className="grid grid-cols-1 sm:grid-cols-2 gap-4 sm:gap-6">
-                  <div>
-                    <label
-                      htmlFor="fullName"
-                      className="block text-sm font-semibold text-green-900 mb-2"
-                    >
-                      Full Name *
-                    </label>
-                    <input
-                      type="text"
-                      id="fullName"
-                      name="fullName"
-                      value={formData.fullName}
-                      onChange={handleInputChange}
-                      required
-                      className="w-full px-3 sm:px-4 py-2.5 sm:py-3 rounded-xl border border-green-300 focus:border-green-500 focus:ring-2 focus:ring-green-500/20 outline-none transition text-sm sm:text-base"
-                      placeholder="John doe"
-                    />
-                  </div>
-                  <div>
-                    <label
-                      htmlFor="phone"
-                      className="block text-sm font-semibold text-green-900 mb-2"
-                    >
-                      Phone Number *
-                    </label>
-                    <input
-                      type="tel"
-                      id="phone"
-                      name="phone"
-                      value={formData.phone}
-                      onChange={handleInputChange}
-                      required
-                      className="w-full px-3 sm:px-4 py-2.5 sm:py-3 rounded-xl border border-green-300 focus:border-green-500 focus:ring-2 focus:ring-green-500/20 outline-none transition text-sm sm:text-base"
-                      placeholder="(517) 715-7367"
-                    />
-                  </div>
-                </div>
-
-                <div className="grid grid-cols-1 sm:grid-cols-2 gap-4 sm:gap-6">
-                  <div>
-                    <label
-                      htmlFor="email"
-                      className="block text-sm font-semibold text-green-900 mb-2"
-                    >
-                      Email Address *
-                    </label>
-                    <input
-                      type="email"
-                      id="email"
-                      name="email"
-                      value={formData.email}
-                      onChange={handleInputChange}
-                      required
-                      className="w-full px-3 sm:px-4 py-2.5 sm:py-3 rounded-xl border border-green-300 focus:border-green-500 focus:ring-2 focus:ring-green-500/20 outline-none transition text-sm sm:text-base"
-                      placeholder="john.doe@example.com"
-                    />
-                  </div>
-                  <div>
-                    <label
-                      htmlFor="address"
-                      className="block text-sm font-semibold text-green-900 mb-2"
-                    >
-                      Property Address *
-                    </label>
-                    <input
-                      type="text"
-                      id="address"
-                      name="address"
-                      value={formData.address}
-                      onChange={handleInputChange}
-                      required
-                      className="w-full px-3 sm:px-4 py-2.5 sm:py-3 rounded-xl border border-green-300 focus:border-green-500 focus:ring-2 focus:ring-green-500/20 outline-none transition text-sm sm:text-base"
-                      placeholder="123 Main St, Lansing, MI"
-                    />
-                  </div>
-                </div>
-
-                <div>
-                  <label
-                    htmlFor="service"
-                    className="block text-sm font-semibold text-green-900 mb-2"
-                  >
-                    Service Needed *
-                  </label>
-                  <select
-                    id="service"
-                    name="service"
-                    value={formData.service}
-                    onChange={handleInputChange}
-                    required
-                    className="w-full px-3 sm:px-4 py-2.5 sm:py-3 rounded-xl border border-green-300 focus:border-green-500 focus:ring-2 focus:ring-green-500/20 outline-none transition bg-white text-sm sm:text-base"
-                  >
-                    <option value="">Select a service</option>
-                    <option value="tree-removal">Tree Removal</option>
-                    <option value="tree-trimming">Tree Trimming & Pruning</option>
-                    <option value="stump-grinding">Stump Grinding</option>
-                    <option value="emergency">Emergency Tree Service</option>
-                    <option value="other">Other</option>
-                  </select>
-                </div>
-
-                <div>
-                  <label
-                    htmlFor="message"
-                    className="block text-sm font-semibold text-green-900 mb-2"
-                  >
-                    Message
-                  </label>
-                  <textarea
-                    id="message"
-                    name="message"
-                    value={formData.message}
-                    onChange={handleInputChange}
-                    rows={4}
-                    className="w-full px-3 sm:px-4 py-2.5 sm:py-3 rounded-xl border border-green-300 focus:border-green-500 focus:ring-2 focus:ring-green-500/20 outline-none transition resize-none text-sm sm:text-base"
-                    placeholder="Describe your tree service needs..."
-                  />
-                </div>
-
-                <div>
-                  <label className="block text-sm font-semibold text-green-900 mb-3">
-                    Preferred Contact Method *
-                  </label>
-                  <div className="flex gap-4 sm:gap-6">
-                    <label className="flex items-center gap-2 cursor-pointer">
-                      <input
-                        type="radio"
-                        name="contactMethod"
-                        value="phone"
-                        checked={formData.contactMethod === "phone"}
-                        onChange={handleInputChange}
-                        className="w-4 h-4 sm:w-5 sm:h-5 text-green-600"
-                      />
-                      <span className="text-gray-700 text-sm sm:text-base">Phone</span>
-                    </label>
-                    <label className="flex items-center gap-2 cursor-pointer">
-                      <input
-                        type="radio"
-                        name="contactMethod"
-                        value="email"
-                        checked={formData.contactMethod === "email"}
-                        onChange={handleInputChange}
-                        className="w-4 h-4 sm:w-5 sm:h-5 text-green-600"
-                      />
-                      <span className="text-gray-700 text-sm sm:text-base">Email</span>
-                    </label>
-                  </div>
-                </div>
-
-                <div className="flex items-start gap-3">
-                  <input
-                    type="checkbox"
-                    id="agreeToContact"
-                    name="agreeToContact"
-                    checked={formData.agreeToContact}
-                    onChange={handleInputChange}
-                    required
-                    className="w-4 h-4 sm:w-5 sm:h-5 mt-0.5 text-green-600 rounded"
-                  />
-                  <label
-                    htmlFor="agreeToContact"
-                    className="text-xs sm:text-sm text-gray-600 leading-relaxed"
-                  >
-                    I agree to be contacted about my estimate request. *
-                  </label>
-                </div>
-
-                {submitError && (
-                  <div className="bg-red-50 border border-red-200 text-red-700 px-3 sm:px-4 py-2 sm:py-3 rounded-xl text-xs sm:text-sm">
-                    {submitError}
-                  </div>
-                )}
-
-                <button
-                  type="submit"
-                  disabled={isSubmitting}
-                  className="w-full inline-flex items-center justify-center rounded-full bg-orange-500 px-6 sm:px-8 py-3 sm:py-4 text-xs sm:text-sm font-semibold uppercase tracking-[0.12em] sm:tracking-[0.14em] text-slate-950 shadow-xl shadow-orange-500/20 transition hover:-translate-y-0.5 hover:bg-orange-400 disabled:opacity-50 disabled:cursor-not-allowed disabled:hover:translate-y-0"
-                >
-                  {isSubmitting ? "Submitting..." : "Submit Request"}
-                </button>
-              </form>
-            )}
-          </motion.div>
-        </div>
-      </section>
-
-      {/* WHY CONTACT US */}
-      <section className="py-16 sm:py-20 md:py-24 bg-gradient-to-b from-green-50 to-white">
-        <div className="max-w-7xl mx-auto px-4 sm:px-6">
-          <motion.div
-            initial={{ opacity: 0, y: 24 }}
-            whileInView={{ opacity: 1, y: 0 }}
-            transition={{ duration: 0.6 }}
-            viewport={{ once: true, amount: 0.2 }}
-            className="text-center mb-10 sm:mb-14"
-          >
-            <h2 className="text-3xl sm:text-4xl md:text-5xl font-bold text-green-900 mb-3 sm:mb-4">
-              Why Choose CRC Tree Service
-            </h2>
-            <p className="text-gray-600 max-w-2xl mx-auto text-sm sm:text-base">
-              Professional tree care you can trust.
-            </p>
-          </motion.div>
-
-          <div className="grid grid-cols-1 sm:grid-cols-2 lg:grid-cols-3 gap-4 sm:gap-6">
-            {whyContactUs.map((item, index) => (
-              <motion.div
-                key={item}
-                initial={{ opacity: 0, scale: 0.9 }}
-                whileInView={{ opacity: 1, scale: 1 }}
-                transition={{ duration: 0.55, delay: index * 0.05 }}
-                viewport={{ once: true, amount: 0.2 }}
-                whileHover={{ y: -4 }}
-                className="bg-white p-4 sm:p-6 rounded-2xl shadow-md hover:shadow-lg transition duration-300 flex items-center gap-3 sm:gap-4 border border-green-100"
-              >
-                <div className="flex-shrink-0 w-8 h-8 sm:w-10 sm:h-10 bg-gradient-to-br from-green-500 to-green-600 rounded-full flex items-center justify-center shadow-lg shadow-green-500/30">
-                  <Check className="w-4 h-4 sm:w-5 sm:h-5 text-white" />
-                </div>
-                <span className="font-semibold text-green-900 text-sm sm:text-base">{item}</span>
-              </motion.div>
-            ))}
-          </div>
-        </div>
-      </section>
-
-      
-
-      {/* FAQ */}
-      <section className="py-24 bg-gradient-to-b from-green-50 to-white">
-        <div className="max-w-4xl mx-auto px-6">
-          <motion.div
-            initial={{ opacity: 0, y: 24 }}
-            whileInView={{ opacity: 1, y: 0 }}
-            transition={{ duration: 0.6 }}
-            viewport={{ once: true, amount: 0.2 }}
-            className="text-center mb-14"
-          >
-            <h2 className="text-4xl md:text-5xl font-bold text-green-900 mb-4">
-              Frequently Asked Questions
-            </h2>
-            <p className="text-gray-600 max-w-2xl mx-auto">
-              Find answers to common questions about our tree services.
-            </p>
-          </motion.div>
-
-          <div className="space-y-4">
-            {faqs.map((faq, index) => (
-              <motion.div
-                key={index}
-                initial={{ opacity: 0, y: 12 }}
-                whileInView={{ opacity: 1, y: 0 }}
-                transition={{ duration: 0.4, delay: index * 0.05 }}
-                viewport={{ once: true, amount: 0.2 }}
-                className="bg-white rounded-2xl shadow-md overflow-hidden"
-              >
-                <button
-                  onClick={() => toggleFaq(index)}
-                  className="w-full px-6 py-5 flex items-center justify-between text-left hover:bg-green-50 transition"
-                  aria-expanded={openFaq === index}
-                >
-                  <span className="font-semibold text-green-900 pr-4">
-                    {faq.question}
-                  </span>
-                  <motion.div
-                    animate={{ rotate: openFaq === index ? 180 : 0 }}
-                    transition={{ duration: 0.3 }}
-                    className="flex-shrink-0"
-                  >
-                    <ChevronDown className="text-green-600" />
-                  </motion.div>
-                </button>
-                <motion.div
-                  initial={false}
-                  animate={{
-                    height: openFaq === index ? "auto" : 0,
-                    opacity: openFaq === index ? 1 : 0,
-                  }}
-                  transition={{ duration: 0.3 }}
-                  className="overflow-hidden"
-                >
-                  <div className="px-6 pb-5 text-gray-600 leading-relaxed">
-                    {faq.answer}
-                  </div>
-                </motion.div>
-              </motion.div>
-            ))}
-          </div>
-        </div>
-      </section>
-
-      {/* EMERGENCY CTA */}
-<section className="py-24 bg-gradient-to-br from-green-900 via-green-800 to-emerald-900 text-white relative overflow-hidden">
   <div className="absolute inset-0">
-    <div className="absolute top-0 left-1/4 w-96 h-96 bg-orange-500/10 rounded-full blur-3xl" />
-    <div className="absolute bottom-0 right-1/4 w-96 h-96 bg-green-500/10 rounded-full blur-3xl" />
+
+    <motion.div
+      initial={{ scale: 1.04, opacity: 0.9 }}
+      animate={{ scale: 1.08, opacity: 1 }}
+      transition={{
+        duration: 18,
+        repeat: Infinity,
+        repeatType: "mirror",
+        ease: "easeInOut",
+      }}
+      className="absolute inset-0"
+    >
+
+      <Image
+        src="/images/tree emergency 4 copy.jpg"
+        alt="Professional tree service"
+        fill
+        sizes="100vw"
+        className="object-cover"
+        priority
+      />
+
+    </motion.div>
+
+
+    <div className="
+      absolute inset-0 
+      bg-gradient-to-b 
+      from-emerald-950/90 
+      via-emerald-950/75 
+      to-emerald-950/95
+    " />
+
   </div>
 
-  <div className="relative max-w-4xl mx-auto px-6 text-center">
+
+
+  <div className="
+    relative z-10 
+    flex 
+    min-h-screen 
+    items-center 
+    justify-center 
+    px-4 
+    sm:px-6 
+    py-20 
+    sm:py-24
+  ">
+
+
+    <div className="mx-auto max-w-5xl text-center w-full">
+
+
+      {/* Badge */}
+
+      <motion.div
+        initial={{ opacity:0, y:24 }}
+        animate={{ opacity:1, y:0 }}
+        transition={{ duration:0.7 }}
+        className="
+          inline-flex 
+          rounded-full 
+          border 
+          border-emerald-200/20 
+          bg-emerald-900/40 
+          px-3 
+          sm:px-4 
+          py-2 
+          text-[10px]
+          sm:text-sm 
+          uppercase 
+          tracking-[0.2em]
+          sm:tracking-[0.32em]
+          text-emerald-100/90
+        "
+      >
+
+        Contact CRC Tree Service
+
+      </motion.div>
+
+
+
+      {/* Heading */}
+
+      <motion.h1
+        initial={{ opacity:0, y:24 }}
+        animate={{ opacity:1, y:0 }}
+        transition={{
+          duration:0.8,
+          delay:0.08
+        }}
+
+        className="
+          mt-6 
+          sm:mt-8 
+          text-3xl 
+          sm:text-4xl 
+          md:text-6xl 
+          lg:text-7xl 
+          font-semibold 
+          tracking-tight 
+          leading-tight
+          text-white
+        "
+      >
+
+        Get Your Free Tree Service Estimate Today
+
+      </motion.h1>
+
+
+
+
+      {/* Description */}
+
+      <motion.p
+        initial={{ opacity:0, y:24 }}
+        animate={{ opacity:1, y:0 }}
+        transition={{
+          duration:0.8,
+          delay:0.16
+        }}
+
+        className="
+          mx-auto 
+          mt-5 
+          sm:mt-6 
+          max-w-2xl 
+          text-sm 
+          sm:text-base 
+          md:text-xl 
+          leading-7 
+          sm:leading-8 
+          text-emerald-100
+        "
+      >
+
+        Need tree removal, trimming, stump grinding, or emergency tree
+        service? Our experienced team is ready to help.
+
+      </motion.p>
+
+
+
+
+      {/* Buttons */}
+
+      <motion.div
+        initial={{opacity:0,y:24}}
+        animate={{opacity:1,y:0}}
+        transition={{
+          duration:0.8,
+          delay:0.24
+        }}
+
+        className="
+          mt-8 
+          sm:mt-10 
+          flex 
+          flex-col 
+          sm:flex-row 
+          items-center 
+          justify-center 
+          gap-3 
+          sm:gap-4
+          w-full
+        "
+      >
+
+
+        <Link
+          href="#estimate-form"
+
+          className="
+            w-full
+            sm:w-auto
+            min-w-[220px]
+            inline-flex
+            items-center
+            justify-center
+            rounded-full
+            bg-orange-500
+            px-6
+            sm:px-8
+            py-3
+            sm:py-4
+            text-xs
+            sm:text-sm
+            font-semibold
+            uppercase
+            tracking-[0.12em]
+            sm:tracking-[0.14em]
+            text-slate-950
+            shadow-xl
+            shadow-orange-500/20
+            transition
+            hover:-translate-y-0.5
+            hover:bg-orange-400
+          "
+        >
+
+          Request Free Estimate
+
+        </Link>
+
+
+
+
+        <a
+          href="tel:+15177157367"
+
+          className="
+            w-full
+            sm:w-auto
+            min-w-[220px]
+            inline-flex
+            items-center
+            justify-center
+            rounded-full
+            border
+            border-emerald-200/40
+            bg-white/5
+            px-6
+            sm:px-8
+            py-3
+            sm:py-4
+            text-xs
+            sm:text-sm
+            font-semibold
+            uppercase
+            tracking-[0.12em]
+            sm:tracking-[0.14em]
+            text-white
+            transition
+            hover:border-emerald-100/60
+            hover:bg-white/10
+          "
+        >
+
+          <Phone className="w-4 h-4 mr-2" />
+
+          Call Now
+
+        </a>
+
+
+
+      </motion.div>
+
+
+    </div>
+
+
+  </div>
+
+</section>
+
+{/* CONTACT INFORMATION */}
+<section className="py-16 sm:py-20 md:py-24 bg-gradient-to-b from-green-50 to-white">
+
+  <div className="max-w-7xl mx-auto px-4 sm:px-6">
+
+
     <motion.div
       initial={{ opacity: 0, y: 24 }}
       whileInView={{ opacity: 1, y: 0 }}
       transition={{ duration: 0.6 }}
       viewport={{ once: true, amount: 0.2 }}
+      className="text-center mb-10 sm:mb-14"
     >
-      <h2 className="text-4xl md:text-5xl font-bold mb-4">
+
+      <h2
+        className="
+        text-3xl 
+        sm:text-4xl 
+        md:text-5xl 
+        font-bold 
+        text-green-900 
+        mb-3 
+        sm:mb-4
+        "
+      >
+        Get in Touch
+      </h2>
+
+
+      <p
+        className="
+        text-gray-600 
+        max-w-2xl 
+        mx-auto 
+        text-sm 
+        sm:text-base
+        "
+      >
+        Contact CRC Tree Service for all your tree care needs.
+      </p>
+
+
+    </motion.div>
+
+
+
+
+    <div
+      className="
+      grid 
+      grid-cols-1 
+      sm:grid-cols-2 
+      lg:grid-cols-4 
+      gap-4 
+      sm:gap-6
+      "
+    >
+
+
+      {contactInfo.map((info,index)=>{
+
+
+        const Icon = info.icon;
+
+
+        return (
+
+          <motion.div
+
+            key={info.title}
+
+            initial={{
+              opacity:0,
+              y:24
+            }}
+
+            whileInView={{
+              opacity:1,
+              y:0
+            }}
+
+            transition={{
+              duration:0.55,
+              delay:index * 0.1
+            }}
+
+            viewport={{
+              once:true,
+              amount:0.2
+            }}
+
+            whileHover={{
+              y:-8
+            }}
+
+
+            className="
+            bg-white
+            p-5
+            sm:p-6
+            rounded-2xl
+            shadow-lg
+            hover:shadow-xl
+            transition-all
+            duration-300
+            "
+          >
+
+
+
+            <div
+              className="
+              w-12
+              h-12
+              sm:w-14
+              sm:h-14
+              bg-gradient-to-br
+              from-green-500
+              to-green-600
+              rounded-xl
+              flex
+              items-center
+              justify-center
+              mb-3
+              sm:mb-4
+              shadow-lg
+              shadow-green-500/30
+              "
+            >
+
+              <Icon
+                className="
+                text-white
+                w-6
+                h-6
+                sm:w-7
+                sm:h-7
+                "
+              />
+
+            </div>
+
+
+
+
+            <h3
+              className="
+              text-base
+              sm:text-lg
+              font-semibold
+              text-green-900
+              mb-2
+              "
+            >
+
+              {info.title}
+
+            </h3>
+
+
+
+
+            <p
+              className="
+              text-gray-600
+              text-xs
+              sm:text-sm
+              leading-relaxed
+              whitespace-pre-line
+              mb-3
+              sm:mb-4
+              "
+            >
+
+              {info.content}
+
+            </p>
+
+
+
+
+
+            {info.link && (
+
+              <a
+
+                href={info.link}
+
+                target={
+                  info.external
+                  ? "_blank"
+                  : undefined
+                }
+
+                rel={
+                  info.external
+                  ? "noopener noreferrer"
+                  : undefined
+                }
+
+
+                className="
+                inline-flex
+                items-center
+                gap-2
+                text-green-600
+                font-semibold
+                text-xs
+                sm:text-sm
+                hover:text-green-700
+                transition
+                "
+
+              >
+
+                {info.linkText}
+
+
+                {info.external && (
+
+                  <ExternalLink
+                    className="
+                    w-3
+                    h-3
+                    sm:w-3.5
+                    sm:h-3.5
+                    "
+                  />
+
+                )}
+
+
+              </a>
+
+
+            )}
+
+
+
+          </motion.div>
+
+
+        );
+
+
+      })}
+
+
+    </div>
+
+
+
+  </div>
+
+
+</section>
+
+{/* FREE ESTIMATE FORM */}
+<section 
+  id="estimate-form" 
+  className="
+    scroll-mt-20 
+    sm:scroll-mt-24 
+    py-16 
+    sm:py-20 
+    md:py-24 
+    bg-white
+  "
+>
+
+  <div className="max-w-4xl mx-auto px-4 sm:px-6">
+
+
+    <motion.div
+      initial={{opacity:0,y:24}}
+      whileInView={{opacity:1,y:0}}
+      transition={{duration:0.6}}
+      viewport={{once:true,amount:0.2}}
+
+      className="
+      text-center 
+      mb-10 
+      sm:mb-14
+      "
+    >
+
+      <h2
+        className="
+        text-3xl
+        sm:text-4xl
+        md:text-5xl
+        font-bold
+        text-green-900
+        mb-3
+        sm:mb-4
+        "
+      >
+        Request Your Free Estimate
+      </h2>
+
+
+      <p
+        className="
+        text-gray-600
+        text-sm
+        sm:text-base
+        max-w-2xl
+        mx-auto
+        "
+      >
+        Fill out the form below and we&apos;ll get back to you within 24 hours.
+      </p>
+
+
+    </motion.div>
+
+
+
+
+
+    <motion.div
+
+      initial={{
+        opacity:0,
+        y:24,
+        scale:0.98
+      }}
+
+      whileInView={{
+        opacity:1,
+        y:0,
+        scale:1
+      }}
+
+      transition={{
+        duration:0.6
+      }}
+
+      viewport={{
+        once:true,
+        amount:0.2
+      }}
+
+
+      className="
+      bg-gradient-to-br
+      from-green-50
+      to-emerald-50
+      p-5
+      sm:p-8
+      md:p-12
+      rounded-2xl
+      sm:rounded-3xl
+      shadow-xl
+      border
+      border-green-200
+      "
+    >
+
+
+
+{submitSuccess ? (
+
+<div className="text-center py-8 sm:py-12">
+
+
+<div
+className="
+w-16
+h-16
+sm:w-20
+sm:h-20
+bg-green-500
+rounded-full
+flex
+items-center
+justify-center
+mx-auto
+mb-4
+sm:mb-6
+"
+>
+
+<Check 
+className="
+text-white
+w-8
+h-8
+sm:w-10
+sm:h-10
+"
+/>
+
+</div>
+
+
+<h3
+className="
+text-xl
+sm:text-2xl
+font-bold
+text-green-900
+mb-2
+"
+>
+Request Submitted!
+</h3>
+
+
+<p
+className="
+text-gray-600
+text-sm
+sm:text-base
+"
+>
+We&apos;ll contact you within 24 hours to discuss your tree service needs.
+</p>
+
+
+</div>
+
+
+) : (
+
+
+
+<form 
+onSubmit={handleSubmit}
+className="
+space-y-4
+sm:space-y-6
+"
+>
+
+
+{/* NAME + PHONE */}
+
+<div
+className="
+grid
+grid-cols-1
+sm:grid-cols-2
+gap-4
+sm:gap-6
+"
+>
+
+
+<div>
+
+<label
+className="
+block
+text-sm
+font-semibold
+text-green-900
+mb-2
+"
+>
+Full Name *
+</label>
+
+
+<input
+
+type="text"
+
+name="fullName"
+
+value={formData.fullName}
+
+onChange={handleInputChange}
+
+required
+
+className="
+w-full
+px-3
+sm:px-4
+py-2.5
+sm:py-3
+rounded-xl
+border
+border-green-300
+focus:border-green-500
+focus:ring-2
+focus:ring-green-500/20
+outline-none
+text-sm
+sm:text-base
+"
+
+/>
+
+</div>
+
+
+
+
+<div>
+
+<label
+className="
+block
+text-sm
+font-semibold
+text-green-900
+mb-2
+"
+>
+Phone Number *
+</label>
+
+
+<input
+
+type="tel"
+
+name="phone"
+
+value={formData.phone}
+
+onChange={handleInputChange}
+
+required
+
+className="
+w-full
+px-3
+sm:px-4
+py-2.5
+sm:py-3
+rounded-xl
+border
+border-green-300
+focus:border-green-500
+focus:ring-2
+focus:ring-green-500/20
+outline-none
+text-sm
+sm:text-base
+"
+
+/>
+
+</div>
+
+
+</div>
+
+
+
+
+
+
+{/* EMAIL + ADDRESS */}
+
+<div
+className="
+grid
+grid-cols-1
+sm:grid-cols-2
+gap-4
+sm:gap-6
+"
+>
+
+
+<div>
+
+<label
+className="
+block
+text-sm
+font-semibold
+text-green-900
+mb-2
+"
+>
+Email Address *
+</label>
+
+
+<input
+
+type="email"
+
+name="email"
+
+value={formData.email}
+
+onChange={handleInputChange}
+
+required
+
+
+className="
+w-full
+px-3
+sm:px-4
+py-2.5
+sm:py-3
+rounded-xl
+border
+border-green-300
+focus:border-green-500
+focus:ring-2
+focus:ring-green-500/20
+outline-none
+text-sm
+sm:text-base
+"
+
+/>
+
+</div>
+
+
+
+
+
+<div>
+
+<label
+className="
+block
+text-sm
+font-semibold
+text-green-900
+mb-2
+"
+>
+Property Address *
+</label>
+
+
+<input
+
+type="text"
+
+name="address"
+
+value={formData.address}
+
+onChange={handleInputChange}
+
+required
+
+
+className="
+w-full
+px-3
+sm:px-4
+py-2.5
+sm:py-3
+rounded-xl
+border
+border-green-300
+focus:border-green-500
+focus:ring-2
+focus:ring-green-500/20
+outline-none
+text-sm
+sm:text-base
+"
+
+/>
+
+
+</div>
+
+
+
+</div>
+
+
+
+
+
+
+{/* SERVICE */}
+
+<div>
+
+<label
+className="
+block
+text-sm
+font-semibold
+text-green-900
+mb-2
+"
+>
+Service Needed *
+</label>
+
+
+<select
+
+name="service"
+
+value={formData.service}
+
+onChange={handleInputChange}
+
+required
+
+
+className="
+w-full
+px-3
+sm:px-4
+py-2.5
+sm:py-3
+rounded-xl
+border
+border-green-300
+bg-white
+text-sm
+sm:text-base
+"
+
+>
+
+
+<option value="">
+Select a service
+</option>
+
+
+<option value="tree-removal">
+Tree Removal
+</option>
+
+
+<option value="tree-trimming">
+Tree Trimming & Pruning
+</option>
+
+
+<option value="stump-grinding">
+Stump Grinding
+</option>
+
+
+<option value="emergency">
+Emergency Tree Service
+</option>
+
+
+<option value="other">
+Other
+</option>
+
+
+</select>
+
+
+</div>
+
+
+
+
+
+{/* MESSAGE */}
+
+<div>
+
+<label
+className="
+block
+text-sm
+font-semibold
+text-green-900
+mb-2
+"
+>
+Message
+</label>
+
+
+<textarea
+
+name="message"
+
+value={formData.message}
+
+onChange={handleInputChange}
+
+rows={4}
+
+className="
+w-full
+px-3
+sm:px-4
+py-2.5
+sm:py-3
+rounded-xl
+border
+border-green-300
+resize-none
+text-sm
+sm:text-base
+"
+
+/>
+
+
+</div>
+
+
+
+
+
+{/* CONTACT METHOD */}
+
+<div>
+
+
+<label
+className="
+block
+text-sm
+font-semibold
+text-green-900
+mb-3
+"
+>
+Preferred Contact Method *
+</label>
+
+
+<div
+className="
+flex
+flex-col
+sm:flex-row
+gap-3
+sm:gap-6
+"
+>
+
+
+<label className="flex items-center gap-2">
+
+<input
+type="radio"
+name="contactMethod"
+value="phone"
+/>
+
+<span>
+Phone
+</span>
+
+</label>
+
+
+
+<label className="flex items-center gap-2">
+
+<input
+type="radio"
+name="contactMethod"
+value="email"
+/>
+
+<span>
+Email
+</span>
+
+</label>
+
+
+
+</div>
+
+
+</div>
+
+
+
+
+
+
+<button
+
+type="submit"
+
+disabled={isSubmitting}
+
+
+className="
+w-full
+rounded-full
+bg-orange-500
+px-6
+sm:px-8
+py-3
+sm:py-4
+text-xs
+sm:text-sm
+font-semibold
+uppercase
+tracking-[0.12em]
+text-slate-950
+shadow-xl
+transition
+hover:bg-orange-400
+disabled:opacity-50
+"
+
+>
+
+
+{isSubmitting 
+? "Submitting..." 
+: "Submit Request"
+}
+
+
+</button>
+
+
+
+
+</form>
+
+
+)}
+
+
+
+</motion.div>
+
+
+
+</div>
+
+</section>
+
+{/* WHY CHOOSE CRC TREE SERVICE */}
+<section className="
+py-16 
+sm:py-20 
+md:py-24 
+bg-gradient-to-b 
+from-green-50 
+to-white
+">
+
+  <div className="
+  max-w-7xl 
+  mx-auto 
+  px-4 
+  sm:px-6
+  ">
+
+
+    <motion.div
+
+      initial={{opacity:0,y:24}}
+
+      whileInView={{opacity:1,y:0}}
+
+      transition={{duration:0.6}}
+
+      viewport={{
+        once:true,
+        amount:0.2
+      }}
+
+      className="
+      text-center 
+      mb-10 
+      sm:mb-14
+      "
+
+    >
+
+      <h2
+
+        className="
+        text-3xl
+        sm:text-4xl
+        md:text-5xl
+        font-bold
+        text-green-900
+        mb-3
+        sm:mb-4
+        "
+
+      >
+
+        Why Choose CRC Tree Service
+
+      </h2>
+
+
+
+      <p
+
+        className="
+        text-gray-600
+        text-sm
+        sm:text-base
+        max-w-2xl
+        mx-auto
+        "
+
+      >
+
+        Professional tree care you can trust.
+
+      </p>
+
+
+    </motion.div>
+
+
+
+
+
+
+    <div
+
+      className="
+      grid
+      grid-cols-1
+      sm:grid-cols-2
+      lg:grid-cols-3
+      gap-4
+      sm:gap-6
+      "
+
+    >
+
+
+
+      {whyContactUs.map((item,index)=>(
+
+
+        <motion.div
+
+
+          key={item}
+
+
+          initial={{
+            opacity:0,
+            scale:0.9
+          }}
+
+
+          whileInView={{
+            opacity:1,
+            scale:1
+          }}
+
+
+          transition={{
+            duration:0.55,
+            delay:index * 0.05
+          }}
+
+
+          viewport={{
+            once:true,
+            amount:0.2
+          }}
+
+
+          whileHover={{
+            y:-4
+          }}
+
+
+          className="
+          bg-white
+          p-4
+          sm:p-6
+          rounded-2xl
+          shadow-md
+          hover:shadow-lg
+          transition
+          duration-300
+          flex
+          items-center
+          gap-3
+          sm:gap-4
+          border
+          border-green-100
+          "
+
+        >
+
+
+
+          <div
+
+            className="
+            flex-shrink-0
+            w-9
+            h-9
+            sm:w-10
+            sm:h-10
+            bg-gradient-to-br
+            from-green-500
+            to-green-600
+            rounded-full
+            flex
+            items-center
+            justify-center
+            shadow-lg
+            shadow-green-500/30
+            "
+
+          >
+
+            <Check
+
+              className="
+              w-4
+              h-4
+              sm:w-5
+              sm:h-5
+              text-white
+              "
+
+            />
+
+
+          </div>
+
+
+
+
+
+          <span
+
+            className="
+            font-semibold
+            text-green-900
+            text-sm
+            sm:text-base
+            leading-tight
+            "
+
+          >
+
+            {item}
+
+          </span>
+
+
+
+
+        </motion.div>
+
+
+      ))}
+
+
+
+    </div>
+
+
+
+  </div>
+
+
+
+</section>
+
+{/* FAQ SECTION */}
+<section className="py-16 sm:py-20 md:py-24 bg-gradient-to-b from-green-50 to-white">
+  <div className="max-w-4xl mx-auto px-4 sm:px-6">
+
+    <motion.div
+      initial={{ opacity: 0, y: 24 }}
+      whileInView={{ opacity: 1, y: 0 }}
+      transition={{ duration: 0.6 }}
+      viewport={{ once: true, amount: 0.2 }}
+      className="text-center mb-10 sm:mb-14"
+    >
+      <h2 className="text-3xl sm:text-4xl md:text-5xl font-bold text-green-900 mb-3 sm:mb-4">
+        Frequently Asked Questions
+      </h2>
+
+      <p className="text-gray-600 text-sm sm:text-base max-w-2xl mx-auto">
+        Find answers to common questions about our tree removal and tree care services.
+      </p>
+    </motion.div>
+
+
+    <div className="space-y-3 sm:space-y-4">
+
+      {faqs.map((faq, index) => (
+
+        <motion.div
+          key={index}
+          initial={{ opacity: 0, y: 12 }}
+          whileInView={{ opacity: 1, y: 0 }}
+          transition={{
+            duration: 0.4,
+            delay: index * 0.05,
+          }}
+          viewport={{ once: true, amount: 0.2 }}
+          className="bg-white rounded-xl sm:rounded-2xl shadow-md overflow-hidden border border-green-100"
+        >
+
+          <button
+            onClick={() => toggleFaq(index)}
+            className="
+              w-full 
+              px-4 sm:px-6 
+              py-4 sm:py-5 
+              flex 
+              items-center 
+              justify-between 
+              gap-3
+              text-left
+              hover:bg-green-50
+              transition
+            "
+            aria-expanded={openFaq === index}
+          >
+
+            <span className="
+              font-semibold 
+              text-green-900
+              text-sm
+              sm:text-base
+              md:text-lg
+            ">
+              {faq.question}
+            </span>
+
+
+            <motion.div
+              animate={{
+                rotate: openFaq === index ? 180 : 0
+              }}
+              transition={{
+                duration:0.3
+              }}
+              className="flex-shrink-0"
+            >
+
+              <ChevronDown 
+                className="text-green-600 w-5 h-5 sm:w-6 sm:h-6"
+              />
+
+            </motion.div>
+
+
+          </button>
+
+
+          <motion.div
+            initial={false}
+            animate={{
+              height: openFaq === index ? "auto" : 0,
+              opacity: openFaq === index ? 1 : 0,
+            }}
+            transition={{
+              duration:0.3
+            }}
+            className="overflow-hidden"
+          >
+
+            <div className="
+              px-4 sm:px-6
+              pb-4 sm:pb-5
+              text-gray-600
+              text-sm
+              sm:text-base
+              leading-relaxed
+            ">
+              {faq.answer}
+            </div>
+
+          </motion.div>
+
+
+        </motion.div>
+
+      ))}
+
+    </div>
+
+
+  </div>
+</section>
+{/* EMERGENCY CTA SECTION */}
+<section className="
+  py-16 
+  sm:py-20 
+  md:py-24
+  bg-gradient-to-br 
+  from-green-900 
+  via-green-800 
+  to-emerald-900
+  text-white
+  relative
+  overflow-hidden
+">
+
+  {/* Background Effects */}
+  <div className="absolute inset-0 pointer-events-none">
+
+    <div className="
+      absolute 
+      top-0 
+      left-1/4 
+      w-56 
+      h-56 
+      sm:w-72 
+      sm:h-72 
+      md:w-96 
+      md:h-96
+      bg-orange-500/10 
+      rounded-full 
+      blur-3xl
+    "/>
+
+
+    <div className="
+      absolute 
+      bottom-0 
+      right-1/4
+      w-56 
+      h-56 
+      sm:w-72 
+      sm:h-72 
+      md:w-96 
+      md:h-96
+      bg-green-500/10 
+      rounded-full 
+      blur-3xl
+    "/>
+
+  </div>
+
+
+  <div className="
+    relative
+    max-w-4xl
+    mx-auto
+    px-4
+    sm:px-6
+    text-center
+  ">
+
+
+    <motion.div
+      initial={{
+        opacity:0,
+        y:24
+      }}
+      whileInView={{
+        opacity:1,
+        y:0
+      }}
+      transition={{
+        duration:0.6
+      }}
+      viewport={{
+        once:true,
+        amount:0.2
+      }}
+    >
+
+
+      <h2 className="
+        text-3xl
+        sm:text-4xl
+        md:text-5xl
+        font-bold
+        mb-4
+        leading-tight
+      ">
         Need Emergency Tree Service?
       </h2>
 
-      <p className="text-emerald-200 text-lg mb-8 max-w-2xl mx-auto">
+
+      <p className="
+        text-emerald-200
+        text-sm
+        sm:text-base
+        md:text-lg
+        mb-8
+        max-w-2xl
+        mx-auto
+        leading-relaxed
+      ">
         Call CRC Tree Service for fast help with storm damage and dangerous
         trees. Available 24/7.
       </p>
 
-      <div className="flex flex-col sm:flex-row items-center justify-center gap-4">
+
+
+      <div className="
+        flex
+        flex-col
+        sm:flex-row
+        items-center
+        justify-center
+        gap-3
+        sm:gap-4
+      ">
+
 
         {/* CALL NOW */}
+
         <a
           href="tel:+15177157367"
-          className="inline-flex min-w-[220px] items-center justify-center rounded-full bg-orange-500 px-8 py-4 text-sm font-semibold uppercase tracking-[0.14em] text-slate-950 shadow-xl shadow-orange-500/20 transition hover:-translate-y-0.5 hover:bg-orange-400"
+          className="
+            w-full
+            sm:w-auto
+            min-w-[220px]
+            inline-flex
+            items-center
+            justify-center
+            rounded-full
+            bg-orange-500
+            px-6
+            sm:px-8
+            py-3
+            sm:py-4
+            text-xs
+            sm:text-sm
+            font-semibold
+            uppercase
+            tracking-[0.12em]
+            sm:tracking-[0.14em]
+            text-slate-950
+            shadow-xl
+            shadow-orange-500/20
+            transition
+            hover:-translate-y-0.5
+            hover:bg-orange-400
+          "
         >
-          <Phone className="w-4 h-4 mr-2" />
+
+          <Phone className="
+            w-4 
+            h-4 
+            mr-2
+          "/>
+
           Call Now
+
         </a>
 
+
+
+
         {/* REQUEST ESTIMATE */}
+
         <Link
           href="/contact#estimate-form"
-          className="inline-flex min-w-[220px] items-center justify-center rounded-full border border-emerald-200/40 bg-white/5 px-8 py-4 text-sm font-semibold uppercase tracking-[0.14em] text-white transition hover:border-emerald-100/60 hover:bg-white/10"
+          className="
+            w-full
+            sm:w-auto
+            min-w-[220px]
+            inline-flex
+            items-center
+            justify-center
+            rounded-full
+            border
+            border-emerald-200/40
+            bg-white/5
+            px-6
+            sm:px-8
+            py-3
+            sm:py-4
+            text-xs
+            sm:text-sm
+            font-semibold
+            uppercase
+            tracking-[0.12em]
+            sm:tracking-[0.14em]
+            text-white
+            transition
+            hover:border-emerald-100/60
+            hover:bg-white/10
+          "
         >
+
           Request Estimate
+
         </Link>
 
+
       </div>
+
+
     </motion.div>
+
+
   </div>
+
+
 </section>
 
-      
-    </>
+   </>
   );
 }
