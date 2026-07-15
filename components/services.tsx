@@ -37,8 +37,8 @@ const services = [
 
 export default function Services() {
   return (
-    <section className="py-24 bg-gradient-to-b from-green-50 to-white">
-      <div className="max-w-7xl mx-auto px-4 sm:px-6">
+    <section className="py-12 sm:py-16 md:py-24 bg-gradient-to-b from-green-50 to-white">
+      <div className="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
 
         {/* HEADER */}
         <motion.div
@@ -46,13 +46,13 @@ export default function Services() {
           whileInView={{ opacity: 1, y: 0 }}
           transition={{ duration: 0.6 }}
           viewport={{ once: true, amount: 0.2 }}
-          className="text-center mb-14"
+          className="text-center mb-8 sm:mb-10 md:mb-14"
         >
-          <h2 className="text-4xl md:text-5xl font-bold text-green-900">
+          <h2 className="text-3xl sm:text-4xl md:text-5xl font-bold text-green-900">
             Our Tree Care Services
           </h2>
 
-          <p className="text-gray-600 mt-4 max-w-2xl mx-auto">
+          <p className="text-gray-600 mt-3 sm:mt-4 max-w-2xl mx-auto text-sm sm:text-base">
             From routine maintenance to emergency tree removal, our experienced
             team provides reliable solutions.
           </p>
@@ -60,7 +60,7 @@ export default function Services() {
 
 
         {/* SERVICES GRID */}
-        <div className="grid md:grid-cols-2 lg:grid-cols-4 gap-6">
+        <div className="grid grid-cols-1 sm:grid-cols-2 lg:grid-cols-4 gap-4 sm:gap-6">
 
           {services.map((service, index) => (
             <motion.div
@@ -76,7 +76,7 @@ export default function Services() {
                 y: -8,
                 scale: 1.02,
               }}
-              className="bg-white p-6 rounded-2xl shadow-md hover:shadow-xl transition duration-300 group"
+              className="bg-white p-5 sm:p-6 rounded-2xl shadow-md hover:shadow-xl transition duration-300 group"
             >
 
               {/* ICON */}
@@ -86,20 +86,20 @@ export default function Services() {
                   rotate: 5,
                 }}
                 transition={{ duration: 0.2 }}
-                className="w-12 h-12 bg-green-100 rounded-xl flex items-center justify-center mb-4"
+                className="w-10 h-10 sm:w-12 sm:h-12 bg-green-100 rounded-xl flex items-center justify-center mb-4"
               >
-                <service.icon className="w-6 h-6 text-green-700" />
+                <service.icon className="w-5 h-5 sm:w-6 sm:h-6 text-green-700" />
               </motion.div>
 
 
               {/* TITLE */}
-              <h3 className="text-xl font-semibold">
+              <h3 className="text-lg sm:text-xl font-semibold">
                 {service.title}
               </h3>
 
 
               {/* DESCRIPTION */}
-              <p className="text-gray-600 text-sm mt-2">
+              <p className="text-gray-600 text-sm mt-2 leading-relaxed">
                 {service.description}
               </p>
 
