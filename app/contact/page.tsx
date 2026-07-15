@@ -660,46 +660,51 @@ export default function ContactPage() {
       </section>
 
       {/* EMERGENCY CTA */}
-      <section className="py-24 bg-gradient-to-br from-green-600 to-green-700 text-white relative overflow-hidden">
-        <div className="absolute inset-0">
-          <div className="absolute top-0 left-1/4 w-96 h-96 bg-white/10 rounded-full blur-3xl" />
-          <div className="absolute bottom-0 right-1/4 w-96 h-96 bg-green-500/10 rounded-full blur-3xl" />
-        </div>
+<section className="py-24 bg-gradient-to-br from-green-900 via-green-800 to-emerald-900 text-white relative overflow-hidden">
+  <div className="absolute inset-0">
+    <div className="absolute top-0 left-1/4 w-96 h-96 bg-orange-500/10 rounded-full blur-3xl" />
+    <div className="absolute bottom-0 right-1/4 w-96 h-96 bg-green-500/10 rounded-full blur-3xl" />
+  </div>
 
-        <div className="relative max-w-4xl mx-auto px-6 text-center">
-          <motion.div
-            initial={{ opacity: 0, y: 24 }}
-            whileInView={{ opacity: 1, y: 0 }}
-            transition={{ duration: 0.6 }}
-            viewport={{ once: true, amount: 0.2 }}
-          >
-            <h2 className="text-4xl md:text-5xl font-bold mb-4">
-              Need Emergency Tree Service?
-            </h2>
-            <p className="text-green-100 text-lg mb-8 max-w-2xl mx-auto">
-              Call CRC Tree Service for fast help with storm damage and
-              dangerous trees. Available 24/7.
-            </p>
+  <div className="relative max-w-4xl mx-auto px-6 text-center">
+    <motion.div
+      initial={{ opacity: 0, y: 24 }}
+      whileInView={{ opacity: 1, y: 0 }}
+      transition={{ duration: 0.6 }}
+      viewport={{ once: true, amount: 0.2 }}
+    >
+      <h2 className="text-4xl md:text-5xl font-bold mb-4">
+        Need Emergency Tree Service?
+      </h2>
 
-            <div className="flex flex-col sm:flex-row items-center justify-center gap-4">
-              <a
-                href="tel:+15177157367"
-                className="inline-flex min-w-[220px] items-center justify-center rounded-full bg-white px-8 py-4 text-sm font-semibold uppercase tracking-[0.14em] text-green-600 shadow-xl transition hover:-translate-y-0.5 hover:bg-gray-100"
-              >
-                <Phone className="w-4 h-4 mr-2" />
-                Call Now
-              </a>
+      <p className="text-emerald-200 text-lg mb-8 max-w-2xl mx-auto">
+        Call CRC Tree Service for fast help with storm damage and dangerous
+        trees. Available 24/7.
+      </p>
 
-              <Link
-                href="#estimate-form"
-                className="inline-flex min-w-[220px] items-center justify-center rounded-full border border-white/40 bg-white/10 px-8 py-4 text-sm font-semibold uppercase tracking-[0.14em] text-white transition hover:border-white/60 hover:bg-white/20"
-              >
-                Request Estimate
-              </Link>
-            </div>
-          </motion.div>
-        </div>
-      </section>
+      <div className="flex flex-col sm:flex-row items-center justify-center gap-4">
+
+        {/* CALL NOW */}
+        <a
+          href="tel:+15177157367"
+          className="inline-flex min-w-[220px] items-center justify-center rounded-full bg-orange-500 px-8 py-4 text-sm font-semibold uppercase tracking-[0.14em] text-slate-950 shadow-xl shadow-orange-500/20 transition hover:-translate-y-0.5 hover:bg-orange-400"
+        >
+          <Phone className="w-4 h-4 mr-2" />
+          Call Now
+        </a>
+
+        {/* REQUEST ESTIMATE */}
+        <Link
+          href="/contact#estimate-form"
+          className="inline-flex min-w-[220px] items-center justify-center rounded-full border border-emerald-200/40 bg-white/5 px-8 py-4 text-sm font-semibold uppercase tracking-[0.14em] text-white transition hover:border-emerald-100/60 hover:bg-white/10"
+        >
+          Request Estimate
+        </Link>
+
+      </div>
+    </motion.div>
+  </div>
+</section>
 
       
     </>
