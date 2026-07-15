@@ -1,84 +1,142 @@
-import { TreePine, Scissors, Axe, Zap } from "lucide-react";
+"use client";
+
+import { TreePine, Scissors, Axe, Zap, ArrowRight } from "lucide-react";
 import Link from "next/link";
+import { motion } from "framer-motion";
+
+const services = [
+  {
+    title: "Tree Removal",
+    description:
+      "Safe removal of hazardous or unwanted trees using professional equipment.",
+    icon: TreePine,
+    id: "tree-removal",
+  },
+  {
+    title: "Tree Trimming & Pruning",
+    description:
+      "Improve tree health, shape, and safety with expert trimming services.",
+    icon: Scissors,
+    id: "tree-trimming",
+  },
+  {
+    title: "Stump Grinding",
+    description:
+      "Complete stump removal to keep your landscape clean and usable.",
+    icon: Axe,
+    id: "stump-grinding",
+  },
+  {
+    title: "Storm Damage Cleanup & Emergency Service",
+    description:
+      "24/7 rapid response for storm damage and urgent tree situations.",
+    icon: Zap,
+    id: "emergency-service",
+  },
+];
 
 export default function Services() {
   return (
-    <section className="py-16 sm:py-20 md:py-24 bg-gradient-to-b from-green-50 to-white">
+    <section className="py-24 bg-gradient-to-b from-green-50 to-white">
       <div className="max-w-7xl mx-auto px-4 sm:px-6">
 
         {/* HEADER */}
-        <div className="text-center mb-10 sm:mb-14">
-          <h2 className="text-3xl sm:text-4xl md:text-5xl font-bold text-green-900">
-            Our Professional Tree Services
+        <motion.div
+          initial={{ opacity: 0, y: 24 }}
+          whileInView={{ opacity: 1, y: 0 }}
+          transition={{ duration: 0.6 }}
+          viewport={{ once: true, amount: 0.2 }}
+          className="text-center mb-14"
+        >
+          <h2 className="text-4xl md:text-5xl font-bold text-green-900">
+            Our Tree Care Services
           </h2>
 
-          <p className="text-gray-600 mt-3 sm:mt-4 max-w-2xl mx-auto text-sm sm:text-base">
-            Safe, reliable, and affordable tree care solutions for your home or business.
+          <p className="text-gray-600 mt-4 max-w-2xl mx-auto">
+            From routine maintenance to emergency tree removal, our experienced
+            team provides reliable solutions.
           </p>
-        </div>
+        </motion.div>
 
-        {/* GRID */}
-        <div className="grid grid-cols-1 sm:grid-cols-2 lg:grid-cols-4 gap-4 sm:gap-6">
 
-          {/* CARD 1 */}
-          <div className="bg-white p-5 sm:p-6 rounded-2xl shadow-md hover:shadow-xl hover:-translate-y-2 transition duration-300">
-            <TreePine className="w-10 h-10 text-green-700" />
-            <h3 className="text-lg sm:text-xl font-semibold mt-4">Tree Removal</h3>
-            <p className="text-gray-600 text-sm mt-2">
-              Safe removal of hazardous or unwanted trees using professional equipment.
-            </p>
-            <Link href="/services#tree-removal" className="mt-4 text-orange-500 font-medium">
-              Read More →
-            </Link>
-          </div>
+        {/* SERVICES GRID */}
+        <div className="grid md:grid-cols-2 lg:grid-cols-4 gap-6">
 
-          {/* CARD 2 */}
-          <div className="bg-white p-5 sm:p-6 rounded-2xl shadow-md hover:shadow-xl hover:-translate-y-2 transition duration-300">
-            <Scissors className="w-10 h-10 text-green-700" />
-            <h3 className="text-lg sm:text-xl font-semibold mt-4">Tree Trimming & Pruning</h3>
-            <p className="text-gray-600 text-sm mt-2">
-              Improve tree health, shape, and safety with expert trimming services.
-            </p>
-            <Link href="/services#tree-trimming" className="mt-4 text-orange-500 font-medium">
-              Read More →
-            </Link>
-          </div>
+          {services.map((service, index) => (
+            <motion.div
+              key={service.title}
+              initial={{ opacity: 0, y: 24 }}
+              whileInView={{ opacity: 1, y: 0 }}
+              transition={{
+                duration: 0.55,
+                delay: index * 0.1,
+              }}
+              viewport={{ once: true, amount: 0.2 }}
+              whileHover={{
+                y: -8,
+                scale: 1.02,
+              }}
+              className="bg-white p-6 rounded-2xl shadow-md hover:shadow-xl transition duration-300 group"
+            >
 
-          {/* CARD 3 */}
-          <div className="bg-white p-5 sm:p-6 rounded-2xl shadow-md hover:shadow-xl hover:-translate-y-2 transition duration-300">
-            <Axe className="w-10 h-10 text-green-700" />
-            <h3 className="text-lg sm:text-xl font-semibold mt-4">Stump Grinding</h3>
-            <p className="text-gray-600 text-sm mt-2">
-              Complete stump removal to keep your landscape clean and usable.
-            </p>
-            <Link href="/services#stump-grinding" className="mt-4 text-orange-500 font-medium">
-              Read More →
-            </Link>
-          </div>
-
-          {/* CARD 4 */}
-          <div className="bg-white p-5 sm:p-6 rounded-2xl shadow-md hover:shadow-xl hover:-translate-y-2 transition duration-300">
-            <Zap className="w-10 h-10 text-green-700" />
-            <h3 className="text-lg sm:text-xl font-semibold mt-4">Storm Damage Cleanup & Emergency Service</h3>
-            <p className="text-gray-600 text-sm mt-2">
-              24/7 rapid response for storm damage and urgent tree situations.
-            </p>
-            <div className="mt-4 flex flex-col gap-2">
-              <a 
-                href="tel:+15177157367" 
-                className="text-orange-500 font-medium hover:text-orange-600 transition"
-                aria-label="Call CRC Tree Service for emergency service"
+              {/* ICON */}
+              <motion.div
+                whileHover={{
+                  scale: 1.1,
+                  rotate: 5,
+                }}
+                transition={{ duration: 0.2 }}
+                className="w-12 h-12 bg-green-100 rounded-xl flex items-center justify-center mb-4"
               >
-                Call Now →
-              </a>
-              <Link 
-                href="/services#emergency-service" 
-                className="text-orange-500 font-medium hover:text-orange-600 transition"
-              >
-                Read More →
-              </Link>
-            </div>
-          </div>
+                <service.icon className="w-6 h-6 text-green-700" />
+              </motion.div>
+
+
+              {/* TITLE */}
+              <h3 className="text-xl font-semibold">
+                {service.title}
+              </h3>
+
+
+              {/* DESCRIPTION */}
+              <p className="text-gray-600 text-sm mt-2">
+                {service.description}
+              </p>
+
+
+              {/* LINKS */}
+              {service.id === "emergency-service" ? (
+                <div className="mt-4 flex flex-col gap-2">
+
+                  <a
+                    href="tel:+15177157367"
+                    className="text-orange-500 font-medium flex items-center gap-1 hover:text-orange-600 transition"
+                  >
+                    Call Now
+                    <ArrowRight size={16} />
+                  </a>
+
+                  <Link
+                    href={`/services#${service.id}`}
+                    className="text-orange-500 font-medium flex items-center gap-1 group-hover:gap-2 transition-all"
+                  >
+                    Read More
+                    <ArrowRight size={16} />
+                  </Link>
+
+                </div>
+              ) : (
+                <Link
+                  href={`/services#${service.id}`}
+                  className="mt-4 text-orange-500 font-medium flex items-center gap-1 group-hover:gap-2 transition-all"
+                >
+                  Read More
+                  <ArrowRight size={16} />
+                </Link>
+              )}
+
+            </motion.div>
+          ))}
 
         </div>
       </div>
