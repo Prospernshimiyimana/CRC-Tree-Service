@@ -820,10 +820,10 @@ border-white/20
 </section>
 
 {/* SAFETY COMMITMENT */}
+
 <section className="py-16 sm:py-24 bg-gradient-to-br from-green-100 via-emerald-50 to-green-100">
 
   <div className="max-w-6xl mx-auto px-4 sm:px-6">
-
 
     <div className="grid grid-cols-1 lg:grid-cols-2 gap-10 sm:gap-12 items-center">
 
@@ -838,77 +838,49 @@ border-white/20
       >
 
 
-        <div className="relative inline-block mb-5 sm:mb-6">
-
-          <div className="
-            w-20
-            h-20
-            sm:w-24
-            sm:h-24
-            bg-gradient-to-br
-            from-green-500
-            to-green-600
-            rounded-full
-            flex
-            items-center
-            justify-center
-            shadow-2xl
-            shadow-green-500/40
-          ">
-
-            <Shield className="w-10 h-10 sm:w-12 sm:h-12 text-white"/>
-
-          </div>
-
-        </div>
-
-
-
-
-        <h2 className="
-          text-3xl
-          sm:text-4xl
-          md:text-5xl
-          font-bold
-          text-green-900
-          mb-5
-          sm:mb-6
-          leading-tight
-        ">
-
+        <h2
+          className="
+            text-3xl
+            sm:text-4xl
+            md:text-5xl
+            font-bold
+            text-green-900
+            mb-5
+            sm:mb-6
+            leading-tight
+          "
+        >
           Safety Is Our Priority
-
         </h2>
 
 
 
-
-        <p className="
-          text-sm
-          sm:text-base
-          text-gray-600
-          leading-relaxed
-          mb-8
-        ">
-
+        <p
+          className="
+            text-sm
+            sm:text-base
+            text-gray-600
+            leading-relaxed
+            mb-8
+          "
+        >
           Our team follows professional safety practices to ensure every
           project is completed responsibly and efficiently. We maintain
           the highest standards of safety for our customers, our team,
           and your property.
-
         </p>
 
 
 
 
-
-        <div className="
-          grid
-          grid-cols-1
-          sm:grid-cols-2
-          gap-4
-        ">
-
+        <div
+          className="
+            grid
+            grid-cols-1
+            sm:grid-cols-2
+            gap-4
+          "
+        >
 
           {[
             "Licensed",
@@ -920,34 +892,40 @@ border-white/20
 
             <div
               key={item}
-              className="flex items-center gap-3"
-            >
-
-              <div className="
-                w-10
-                h-10
-                bg-green-500
-                rounded-full
+              className="
                 flex
                 items-center
-                justify-center
-                flex-shrink-0
-              ">
+                gap-3
+                bg-white
+                p-4
+                rounded-xl
+                shadow-sm
+                border
+                border-green-100
+              "
+            >
 
-                <Check className="w-5 h-5 text-white"/>
 
-              </div>
+              <div
+                className="
+                  w-3
+                  h-3
+                  bg-green-500
+                  rounded-full
+                  flex-shrink-0
+                "
+              />
 
 
-              <span className="
-                text-sm
-                sm:text-base
-                font-semibold
-                text-green-900
-              ">
-
+              <span
+                className="
+                  text-sm
+                  sm:text-base
+                  font-semibold
+                  text-green-900
+                "
+              >
                 {item}
-
               </span>
 
 
@@ -978,94 +956,91 @@ border-white/20
       >
 
 
-        <div className="
-          absolute
-          inset-0
-          bg-gradient-to-br
-          from-green-500/20
-          to-orange-500/20
-          rounded-3xl
-          blur-3xl
-        "/>
+        <div
+          className="
+            absolute
+            inset-0
+            bg-gradient-to-br
+            from-green-500/20
+            to-orange-500/20
+            rounded-3xl
+            blur-3xl
+          "
+        />
 
 
 
-        <div className="
-          relative
-          bg-white
-          p-5
-          sm:p-8
-          rounded-3xl
-          shadow-2xl
-          border
-          border-green-200
-        ">
+        <div
+          className="
+            relative
+            bg-white
+            p-5
+            sm:p-8
+            rounded-3xl
+            shadow-2xl
+            border
+            border-green-200
+          "
+        >
 
 
-          <div className="
-            grid
-            grid-cols-1
-            sm:grid-cols-2
-            gap-4
-            sm:gap-6
-          ">
+          <div
+            className="
+              grid
+              grid-cols-1
+              sm:grid-cols-2
+              gap-4
+              sm:gap-6
+            "
+          >
 
 
             {[
-              {
-                icon:Leaf,
-                title:"Eco-Friendly",
-              },
-              {
-                icon:Zap,
-                title:"Efficient",
-              },
-              {
-                icon:Target,
-                title:"Precise",
-              },
-              {
-                icon:Clock,
-                title:"Timely",
-              },
-
-            ].map((item,index)=>(
+              "Eco-Friendly Solutions",
+              "Efficient Service",
+              "Precise Work",
+              "Timely Completion",
+            ].map((item)=>(
 
 
               <div
-                key={item.title}
+                key={item}
                 className="
-                  text-center
                   p-5
                   sm:p-6
                   bg-green-50
                   rounded-2xl
+                  text-center
+                  border
+                  border-green-100
+                  hover:shadow-md
+                  transition
                 "
               >
 
-                <item.icon
+
+                <h4
                   className="
-                    w-9
-                    h-9
-                    sm:w-10
-                    sm:h-10
-                    text-green-600
-                    mx-auto
-                    mb-3
+                    text-base
+                    sm:text-lg
+                    font-semibold
+                    text-green-900
                   "
-                />
-
-
-                <h4 className="
-                  text-sm
-                  sm:text-base
-                  font-semibold
-                  text-green-900
-                ">
-
-                  {item.title}
-
+                >
+                  {item}
                 </h4>
+
+
+                <p
+                  className="
+                    mt-2
+                    text-sm
+                    text-gray-600
+                    leading-relaxed
+                  "
+                >
+                  Professional tree care focused on quality, safety, and customer satisfaction.
+                </p>
 
 
               </div>
@@ -1083,10 +1058,12 @@ border-white/20
       </motion.div>
 
 
+
     </div>
 
 
   </div>
+
 
 </section>
 
